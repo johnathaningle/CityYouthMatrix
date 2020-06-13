@@ -5,7 +5,6 @@ dependencies:
   - asgiref=3.2.7=py_0
   - ca-certificates=2020.1.1=0
   - certifi=2020.4.5.1=py38_0
-  - django=3.0.3=py_0
   - openssl=1.1.1g=he774522_0
   - pip=20.0.2=py38_3
   - python=3.8.3=he1778fa_0
@@ -18,5 +17,10 @@ dependencies:
   - wheel=0.34.2=py38_0
   - wincertstore=0.2=py38_0
   - zlib=1.2.11=h62dcd97_4
+  - pip:
+    - autopep8==1.5.3
+    - django==3.0.7
+    - pycodestyle==2.6.0
+    - toml==0.10.1
 prefix: C:\Users\john.ingle\.conda\envs\cym
 
