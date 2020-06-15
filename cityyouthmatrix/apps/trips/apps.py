@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TripsConfig(AppConfig):
-    name = 'trips'
+    name = 'cityyouthmatrix.apps.trips'
