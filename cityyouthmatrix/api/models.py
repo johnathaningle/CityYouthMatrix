@@ -5,7 +5,7 @@ from django.db.models import Q
 
 
 class User(AbstractUser):
-    pass
+    contact_number = models.CharField(max_length=15)
 
 
 class Address(models.Model):
@@ -16,15 +16,10 @@ class Address(models.Model):
     zip_code = models.CharField(max_length=10)
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    contact_number = models.CharField(max_length=15)
-
-
 class Driver(models.Model):
     """Picks up or returns family and child(ren)
     """
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_verified = models.BooleanField(default=False)
     car_make = models.CharField(max_length=50)
     car_model = models.CharField(max_length=50)
@@ -38,8 +33,7 @@ class Family(models.Model):
         ENGLISH = "EN", _("English")
         SPANISH = "ES", _("Spanish")
 
-    profile = models.OneToOneField(
-        Profile, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     preferred_language = models.CharField(
         max_length=2, choices=FamilyLanguages.choices)
 
@@ -84,9 +78,18 @@ class ActivityPartner(models.Model):
 class Event(models.Model):
     """Every event takes place at an activity partner's location
     """
+
+    class EventSeasons(models.TextChoices):
+        SPRING = "Spring", _("Spring")
+        SUMMER = "Summer", _("Summer")
+        FALL = "Fall", _("Fall")
+        WINTER = "Winter", _("Winter")
+
+    name = models.CharField(max_length=200)
     activity_partner = models.ForeignKey(ActivityPartner, on_delete=models.DO_NOTHING)
     event_datetime = models.DateTimeField()
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    season = models.CharField(max_length=6, choices=EventSeasons.choices)
 
 
 class Trip(models.Model):
