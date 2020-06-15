@@ -1,11 +1,7 @@
 from django.contrib import admin
 from .models import (
     ActivityPartner,
-    Driver,
     Event,
-    Family,
-    FamilyAddress,
-    FamilyMember,
     Trip,
 )
 
@@ -22,8 +18,7 @@ from .models import (
 
 
 
-admin.site.register(Driver)
+
 admin.site.register(Trip)
-admin.site.register(Family)
-admin.site.register(FamilyMember)
+admin.site.register(Event)
 admin.site.register(ActivityPartner)
