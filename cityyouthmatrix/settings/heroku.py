@@ -11,6 +11,8 @@ TEMPLATES[0]['OPTIONS'].update({'debug': DEBUG})
 
 ALLOWED_HOSTS = ['cityyouthmatrix.herokuapp.com']
 
+MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware'] + MIDDLEWARE
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     raise ImproperlyConfigured('No SECRET_KEY is set!')
