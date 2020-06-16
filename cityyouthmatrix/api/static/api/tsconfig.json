@@ -1,0 +1,19 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "noImplicitAny": false,
+      "noEmitOnError": false,
+      "removeComments": false,
+      "sourceMap": false,
+      "target": "es5",
+      "allowJs": false,
+      "lib": [ "dom", "es6", "dom.iterable" ],
+      "typeRoots": [ "./typings", "node_modules/@types" ]
+    },
+    "include": [ "." ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  
+  
