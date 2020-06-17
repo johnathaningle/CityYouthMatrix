@@ -3,6 +3,9 @@ export namespace M {
     export class Sidenav {
         static init(nodes: NodeListOf<Element>, options: any): Sidenav
     }
+    export class Tabs {
+        static init(nodes: NodeListOf<Element>, options: any): Tabs
+    }
 }
 
 export class DataTable {

@@ -197,6 +197,37 @@ hr {
     margin-right: 15px;
 }
 
+.section-label {
+    font-size: 14px;
+    margin: 0.02rem 0 .912rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #666;
+    background: #eae8e8;
+    padding: 10px;
+}
+
+.fancy-text {
+    font-size: 14px;
+    margin: 0.02rem 0 .912rem 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #353535;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+    background-color: transparent;
+    color: #f44336;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: #fff;
+}
+
 /* ==========================================================================
    displatcher specific - maybe move to own css. IDK
    ========================================================================== */
@@ -206,18 +237,17 @@ hr {
     position: relative;
 }
 
-/* ==========================================================================
-   mobile styles
-   ========================================================================== */
-@media(max-width:769px){
-	.half-bkrd {
-	    height: 40vh;
-	    padding: 1rem;
-	}
-	.left-wrap {
-	    padding: 2rem 2rem;
-	}
-	.right-wrap {
-	    padding: 2rem 2rem;
-	}
+@media(max-width:769px) {
+    .half-bkrd {
+        height: 40vh;
+        padding: 1rem;
+    }
+
+    .left-wrap {
+        padding: 2rem 2rem;
+    }
+
+    .right-wrap {
+        padding: 2rem 2rem;
+    }
 }

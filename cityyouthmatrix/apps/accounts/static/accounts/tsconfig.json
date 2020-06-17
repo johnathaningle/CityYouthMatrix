@@ -5,7 +5,9 @@
       "noEmitOnError": false,
       "removeComments": false,
       "sourceMap": false,
-      "target": "es5",
+      "target": "es6",
+      "module": "UMD",
+      "moduleResolution": "Node",
       "allowJs": false,
       "lib": [ "dom", "es6", "dom.iterable" ],
       "typeRoots": [ "./typings", "node_modules/@types" ]

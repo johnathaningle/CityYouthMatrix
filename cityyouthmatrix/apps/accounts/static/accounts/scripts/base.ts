@@ -8,4 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         edge:'left'
     });
 
+    var elems = document.querySelectorAll('.tabs');
+    var instance = M.Tabs.init(elems,  {
+    	swipeable:false
+    });
 });
