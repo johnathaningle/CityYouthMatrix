@@ -1,0 +1,36 @@
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/css/main.css'%}">
+    {% block headsection %}
+    {% endblock headsection %}
+    <title>City Youth Matrix</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <!-- <a href="#" class="brand-logo">Logo</a> -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light red white-text btn">BROADCAST NEED</a></li>
+                <li><a href=""><i class="material-icons">notifications</i></a></li>
+                <li><a href=""><i class="material-icons">settings</i></a></li>
+                <li><a href=""><i class="material-icons">logout</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+
+    {% block scripts %}
+    {% endblock scripts %}
+</body>

@@ -130,4 +130,4 @@ dmypy.json
 .vscode
 
 node_modules
-cityyouthmatrix/api/static/api/scripts/*.js
+cityyouthmatrix/apps/accounts/static/accounts/scripts/*.js
