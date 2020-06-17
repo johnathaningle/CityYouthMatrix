@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/plugins/datatables/vanilla-dataTables.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/css/main.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/css/mobile.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+  <main id="dispatcher">
+    <nav>
+      <div class="nav-wrapper">
+        <!-- <a href="#" class="brand-logo">Logo</a> -->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light red white-text btn">BROADCAST NEED</a></li>
+          <li><a href=""><i class="material-icons">notifications</i></a></li>
+          <li><a href=""><i class="material-icons">settings</i></a></li>
+          <li><a href=""><i class="material-icons">logout</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background">
+          <img src="https://via.placeholder.com/500/000000/FFFFFF/">
+        </div>
+        <a href="#user"><img class="circle" src="https://via.placeholder.com/150"></a>
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">cloud</i>Dashboard</a></li>
+      <li><a href="manage-drivers.html" class="waves-effect"><i class="material-icons">directions_car</i>Drivers</a></li>
+      <li><a href="manage-families.html" class="waves-effect"><i class="material-icons">people_outline</i>Families</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">report</i>Broadcast needs</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">place</i>Trip Management</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">announcement</i>Broadcast Notification</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">settings</i>Manage Profile</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">note</i>Reporting</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">edit</i>Update Terms and Rules</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">logout</i>Log Out</a></li>
+    </ul>
+    <!-- Start Inner Goodness -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col l12">
+          <a href="manage-drivers.html" class="waves-effect waves-light white-text btn black float-right">Back To Driver Listing</a>
+        </div>  
+      </div>  
+      <div class="row">
+        <div class="col l12">
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Add New Family</h4> 
+            <div class="row">
+              <div class="row">
+                <div class="col s12">
+                  <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#contact">Contact</a></li>
+                    <li class="tab col s3"><a href="#address">Address</a></li>
+                    <li class="tab col s3"><a href="#members">Family Members</a></li>
+                  </ul>
+                </div>
+                <div id="contact" class="col s12">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input  id="firstName" type="text" class="validate">
+                        <label for="firstName">First Name Of Primary Contact</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="lastName" type="text" class="validate">
+                        <label for="lastName">Last Name Of Primary Contact</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="cellPhone" type="text" class="validate">
+                        <label for="cellPhone">Cell Phone Number</label>
+                      </div>
+                    </div> 
+                    <div class="row">
+                      <div class="col l12">
+                        <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save</button>
+                      </div>  
+                    </div>
+
+                  </form>
+                </div>
+                <div id="address" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="Address1" type="text" class="validate">
+                      <label for="Address1">Home address Line 1</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="Address2" type="text" class="validate">
+                      <label for="Address2">Home address Line 2</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="city" type="text" class="validate">
+                      <label for="city">City</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <select class="browser-default">
+                        <option value="" disabled selected>Choose your State</option>
+                        <option value="1">MD</option>
+                        <option value="2">PA</option>
+                        <option value="3">WV</option>
+                      </select>
+                    </div>  
+
+                    <div class="input-field col s4">
+                      <input id="zip" type="text" class="validate">
+                      <label for="zip">Zip</label>
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="col l12">
+                      <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save</button>
+                    </div>  
+                  </div> 
+                </div>
+                <div id="members" class="col s12">
+
+                  <form class="col s12 mt-3">
+                     <h5 class="section-label">Primary Contact</h5>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input  id="firstName" type="text" class="validate">
+                        <label for="firstName">First Name Of Primary Contact</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="age" type="text" class="validate">
+                        <label for="age">Age</label>
+                      </div>
+                    </div>
+                    <div id="additionalMembers">
+                      <h5 class="section-label">Family Members</h5>
+                      <div class="row">
+                        <div class="input-field col s3">
+                          <input id="username" type="text" class="validate">
+                          <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input id="password" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                         <div class="input-field col s3">
+                          <input id="age" type="text" class="validate">
+                          <label for="age">Age</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input id="cellPhone" type="text" class="validate">
+                          <label for="cellPhone">Contact Phone Number</label>
+                        </div>
+                      </div>
+                    </div> 
+                    <p class="fancy-text"><span class="btn-floating btn-small waves-effect waves-light red" id="add"><i class="sm material-icons">add</i></span> Add Additional Family members </p>
+
+
+                    <div class="row">
+                      <div class="col l12">
+                        <button type="submit" class="waves-effect waves-light black white-text btn float-right mt-3">Save</button>
+                      </div>  
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>  
+      </div> 
+    </div>   
+    <!-- End Inner Goodness -->
+  </main>  
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="../assets/plugins/materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../assets/js/main.js"></script>
+  <script>
+    var nextId = 0
+    , container = document.getElementById('additionalMembers');
+
+    function addLabel() {
+      var d = document.createElement("div");
+      d.id = "member" + nextId;
+// d.onclick = addLabel;
+d.innerHTML = "<div class='row'><div class='input-field col s3'> <input id='username"+nextId+"' type='text' class='validate'><label for='username"+nextId+"'>Username</label> </div><div class='input-field col s3'> <input id='password"+nextId+"' type='password' class='validate'><label for='password"+nextId+"'>Password</label> </div><div class='input-field col s3'><input id='age"+nextId+"' type='text' class='validate'><label for='age"+nextId+"'>Age</label></div><div class='input-field col s3'><input id='cellPhone"+nextId+"' type='text' class='validate'><label for='cellPhone"+nextId+"'>Contact Phone Number</label></div></div>";
+container.appendChild(d);
+nextId += 1;
+}
+document.getElementById('add').onclick = function(){
+  addLabel();
+};
+
+
+</script> 
+
+
+</body>
+</html>
