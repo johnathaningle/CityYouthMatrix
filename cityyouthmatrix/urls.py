@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from cityyouthmatrix.apps.accounts.views import (
-    dispatcher
+    dispatcher,
+    home
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("dispatcher", dispatcher)
+    path("dispatcher", dispatcher),
+    path("home/", home)
 ]
