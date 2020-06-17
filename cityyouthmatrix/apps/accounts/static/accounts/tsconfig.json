@@ -5,16 +5,14 @@
       "noEmitOnError": false,
       "removeComments": false,
       "sourceMap": false,
-      "target": "es6",
-      "module": "UMD",
-      "allowJs": false,
+      "target": "es5",
+      "module": "amd",
       "lib": [ "dom", "es6", "dom.iterable" ],
-      "typeRoots": [ "./typings", "node_modules/@types" ]
+      "typeRoots": [ "./typings", "node_modules/@types" ],
     },
-    "include": [ "." ],
+    "include": [ ".", "./scripts" ],
     "exclude": [
       "node_modules"
-    ]
+    ],
   }
-  
   

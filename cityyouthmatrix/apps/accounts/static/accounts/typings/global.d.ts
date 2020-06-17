@@ -1,23 +1,27 @@
 
-export namespace M {
-    export class Sidenav {
+declare namespace M {
+    class Sidenav {
         static init(nodes: NodeListOf<Element>, options: any): Sidenav
     }
-    export class Tabs {
+    class Tabs {
         static init(nodes: NodeListOf<Element>, options: any): Tabs
     }
 }
 
-export class DataTable {
+
+declare class DataTable {
     constructor(selector: string, options: any)
 }
 
-export namespace FullCalendar {
-    export class Calendar {
+declare namespace FullCalendar {
+    class Calendar {
         constructor(element: HTMLElement, options: Partial<CalendarOptions>)
         render(): void
     }
-    export interface CalendarOptions {
+    interface CalendarOptions {
         plugins: Array<string>
     }
 }
+
+
+

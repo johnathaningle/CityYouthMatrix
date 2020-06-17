@@ -1,5 +1,7 @@
-import * as Dispatcher from "./dispatcher";
+import { dispatch } from "./dispatcher";
+import { initDashboard } from "./base";
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("hello");
+    initDashboard();
+    dispatch();
 });

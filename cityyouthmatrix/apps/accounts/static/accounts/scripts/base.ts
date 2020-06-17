@@ -1,7 +1,7 @@
-import { M } from "../typings/init";
 
+/// <reference path="../typings/global.d.ts" />
 
-document.addEventListener('DOMContentLoaded', function() {
+export function initDashboard() {
     var elems = document.querySelectorAll('.sidenav');
 
     var instances = M.Sidenav.init(elems, {
@@ -12,4 +12,4 @@ document.addEventListener('DOMContentLoaded', function() {
     var instance = M.Tabs.init(elems,  {
     	swipeable:false
     });
-});
+}

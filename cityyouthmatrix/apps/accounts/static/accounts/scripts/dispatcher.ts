@@ -1,6 +1,7 @@
-import { DataTable, FullCalendar } from "../typings/init";
 
-document.addEventListener("DOMContentLoaded", function() {
+/// <reference path="../typings/global.d.ts" />
+
+export function dispatch() {
     var dataTable = new DataTable(".datatable",{
         perPage:10
     });
@@ -21,5 +22,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     calendar.render();
-});
+}
 
