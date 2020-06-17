@@ -60,3 +60,11 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    var dataTable = new DataTable(".datatable",{
+    perPage:50
+  });
+</script>
+{% endblock scripts %}

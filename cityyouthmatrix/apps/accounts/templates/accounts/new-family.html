@@ -153,3 +153,24 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    var nextId = 0
+    , container = document.getElementById('additionalMembers');
+
+    function addLabel() {
+      var d = document.createElement("div");
+      d.id = "member" + nextId;
+// d.onclick = addLabel;
+d.innerHTML = "<div class='row'><div class='input-field col s3'> <input id='username"+nextId+"' type='text' class='validate'><label for='username"+nextId+"'>Username</label> </div><div class='input-field col s3'> <input id='password"+nextId+"' type='password' class='validate'><label for='password"+nextId+"'>Password</label> </div><div class='input-field col s3'><input id='age"+nextId+"' type='text' class='validate'><label for='age"+nextId+"'>Age</label></div><div class='input-field col s3'><input id='cellPhone"+nextId+"' type='text' class='validate'><label for='cellPhone"+nextId+"'>Contact Phone Number</label></div></div>";
+container.appendChild(d);
+nextId += 1;
+}
+document.getElementById('add').onclick = function(){
+  addLabel();
+};
+
+
+</script>
+{% endblock scripts %}
