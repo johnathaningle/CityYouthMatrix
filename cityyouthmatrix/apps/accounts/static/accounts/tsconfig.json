@@ -7,7 +7,6 @@
       "sourceMap": false,
       "target": "es6",
       "module": "UMD",
-      "moduleResolution": "Node",
       "allowJs": false,
       "lib": [ "dom", "es6", "dom.iterable" ],
       "typeRoots": [ "./typings", "node_modules/@types" ]
