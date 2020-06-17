@@ -22,6 +22,6 @@ from cityyouthmatrix.apps.accounts.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("dispatcher", dispatcher),
-    path("home/", home)
+    path("dispatcher/", dispatcher),
+    path("/", home)
 ]
