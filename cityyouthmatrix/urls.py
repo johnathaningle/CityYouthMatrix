@@ -17,11 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from cityyouthmatrix.apps.accounts.views import (
     dispatcher,
-    home
+    home, manage_drivers,
+    manage_families,
+    new_driver,
+    new_family
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("dispatcher/", dispatcher),
+    path("managedrivers/", manage_drivers),
+    path("managefamilies/", manage_families),
+    path("newdriver/", new_driver),
+    path("newfamily/", new_family),
     path("/", home)
 ]

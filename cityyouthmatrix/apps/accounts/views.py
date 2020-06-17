@@ -7,3 +7,15 @@ def dispatcher(request: HttpRequest):
 
 def home(request: HttpRequest):
     return render(request, "accounts/home.html")
+
+def manage_drivers(request: HttpRequest):
+    return render(request, "accounts/manage-drivers.html")
+
+def manage_families(request: HttpRequest):
+    return render(request, "accounts/manage-families.html")
+
+def new_family(request: HttpRequest):
+    return render(request, "accounts/new-family.html")
+
+def new_driver(request: HttpRequest):
+    return render(request, "accounts/new-driver.html")
