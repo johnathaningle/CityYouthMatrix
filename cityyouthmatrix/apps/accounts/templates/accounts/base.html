@@ -1,0 +1,64 @@
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://unpkg.com/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core@4.4.2/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'accounts/css/main.css'%}">
+    {% block headsection %}
+    {% endblock headsection %}
+    <title>City Youth Matrix</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <!-- <a href="#" class="brand-logo">Logo</a> -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light red white-text btn">BROADCAST NEED</a></li>
+                <li><a href=""><i class="material-icons">notifications</i></a></li>
+                <li><a href=""><i class="material-icons">settings</i></a></li>
+                <li><a href=""><i class="material-icons">logout</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background">
+          <img src="https://via.placeholder.com/500/000000/FFFFFF/">
+        </div>
+        <a href="#user"><img class="circle" src="https://via.placeholder.com/150"></a>
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">cloud</i>Dashboard</a></li>
+      <li><a href="manage-drivers.html" class="waves-effect"><i class="material-icons">directions_car</i>Drivers</a></li>
+      <li><a href="manage-families.html" class="waves-effect"><i class="material-icons">people_outline</i>Families</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">report</i>Broadcast needs</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">place</i>Trip Management</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">announcement</i>Broadcast Notification</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">settings</i>Manage Profile</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">note</i>Reporting</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">edit</i>Update Terms and Rules</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">logout</i>Log Out</a></li>
+    </ul>
+    {% block content %}
+    {% endblock content %}
+    <script src="{% static 'accounts/scripts/base.js'%}"></script>
+    <script src="{% static 'accounts/plugins/fullcalendar/main.js'%}"></script>
+    <script src="{% static 'accounts/plugins/fullcalendar/daygrid-main.js'%}"></script>
+    <script src="{% static 'accounts/plugins/fullcalendar/google-main.js'%}"></script>
+
+    <script src="{% static 'accounts/plugins/datatables/vanilla-dataTables.js'%}"></script>
+    {% block scripts %}
+    {% endblock scripts %}
+</body>

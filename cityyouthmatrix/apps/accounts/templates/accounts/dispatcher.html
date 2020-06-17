@@ -1,0 +1,141 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block headsection %}
+{% endblock headsection %}
+
+{% block content %}
+  <main id="dispatcher">
+
+    <div class="mt-5">
+      <div class="row">
+        <div class="col l6 m6 s12">
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Manage Trips</h4> 
+            <table class="highlight responsive-table striped datatable2">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Family</th>
+                  <th>Adults/Kids</th>
+                  <th>Pickup</th>
+                  <th>Drop Off</th>
+                  <th>Contact #</th>
+                  <th>Return?</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Unassigned Trips</h4> 
+            <table class="highlight responsive-table striped datatable">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Family</th>
+                  <th>Adults/Kids</th>
+                  <th>Pickup</th>
+                  <th>Drop Off</th>
+                  <th>Contact #</th>
+                  <th>Return?</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+                <tr>
+                  <td>6/24/20</td>
+                  <td>18:30</td>
+                  <td>Joneston</td>
+                  <td>1/2</td>
+                  <td>1234 Center St 21740</td>
+                  <td>5678 Center St 21740</td>
+                  <td>240-310-0065</td>
+                  <td><i class="material-icons">check</i></td>
+                  <td><a href=""><i class="material-icons">edit</i></a></td>  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            
+        </div>
+        <div class="col l6 m6 s12">
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Trip Calendar</h4> 
+            <div id="calendar"></div>
+
+          </div>
+        </div>
+      </div> 
+    </div> 
+    <!-- End Inner Goodness -->
+  </main>
+
+
+{% endblock content %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'accounts/scripts/dispatcher.js'%}">
+{% endblock scripts %}

@@ -1,0 +1,20 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "noImplicitAny": false,
+      "noEmitOnError": false,
+      "removeComments": false,
+      "sourceMap": false,
+      "target": "es6",
+      "module": "UMD",
+      "allowJs": false,
+      "lib": [ "dom", "es6", "dom.iterable" ],
+      "typeRoots": [ "./typings", "node_modules/@types" ]
+    },
+    "include": [ "." ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  
+  
