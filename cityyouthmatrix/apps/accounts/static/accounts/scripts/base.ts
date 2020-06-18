@@ -9,7 +9,9 @@ export function initDashboard() {
     });
 
     var elems = document.querySelectorAll('.tabs');
-    var instance = M.Tabs.init(elems,  {
-    	swipeable:false
-    });
+    if(elems.length > 0) {
+        var instance = M.Tabs.init(elems,  {
+            swipeable:false
+        });
+    }
 }
