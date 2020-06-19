@@ -38,6 +38,8 @@ class CustomUserManager(UserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
 
+        return self._create_user(username, email, password, **extra_fields)
+
 
 class User(AbstractUser):
     first_name = models.CharField(max_length=50, verbose_name='first name')
