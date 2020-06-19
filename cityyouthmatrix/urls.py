@@ -26,10 +26,10 @@ from cityyouthmatrix.apps.accounts.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("dispatcher/", dispatcher),
-    path("managedrivers/", manage_drivers),
-    path("managefamilies/", manage_families),
-    path("newdriver/", new_driver),
-    path("newfamily/", new_family),
-    path("/", home)
+    path("dispatcher", dispatcher),
+    path("managedrivers", manage_drivers),
+    path("managefamilies", manage_families),
+    path("newdriver", new_driver),
+    path("newfamily", new_family),
+    path("", home)
 ]
