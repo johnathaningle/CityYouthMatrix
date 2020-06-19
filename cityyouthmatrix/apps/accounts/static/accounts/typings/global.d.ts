@@ -6,6 +6,13 @@ declare namespace M {
     class Tabs {
         static init(nodes: NodeListOf<Element>, options: any): Tabs
     }
+    class Collapsible {
+        static init(nodes: NodeListOf<Element>, options: any): Collapsible
+    }
+
+    class Dropdown {
+        static init(nodes: NodeListOf<Element>, options: any): Dropdown
+    }
 }
 
 

@@ -14,4 +14,7 @@ export function initDashboard() {
             swipeable:false
         });
     }
+
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {});
 }
