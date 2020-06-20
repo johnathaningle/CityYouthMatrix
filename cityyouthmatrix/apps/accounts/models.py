@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.db.models import Q
+from django.http import QueryDict
 
 
 def _get_random_username():
@@ -70,6 +71,22 @@ class Driver(models.Model):
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
+
+    def from_query_dict(self, request_body: QueryDict) -> bool:
+        if request_body["is_verified"] is not None:
+            try:
+                self.is_verified = bool(request_body["is_verified"])
+            except:
+                self.is_verified = False
+        if request_body["car_make"] is not None:
+            self.car_make = request_body["car_make"]
+        if request_body["car_model"] is not None:
+            self.car_model = request_body["car_model"]
+        if request_body["license_plate"] is not None:
+            self.license_plate = request_body["license_plate"]
+
+        return True
+
 
 
 class Family(models.Model):

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cityyouthmatrix.apps.accounts',
     'cityyouthmatrix.apps.trips',
+    'cityyouthmatrix.apps.api',
 ]
 
 MIDDLEWARE = [
