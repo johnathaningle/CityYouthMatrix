@@ -1,0 +1,45 @@
+{% extends 'accounts/dispatcher/base-dispatcher.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">Edit Rules</h4>
+                <div class="row">
+                    <form class="col s12">
+                       <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="rules" rows="4" cols="50"></textarea>
+                                  
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col l12">
+                                <button type="submit"
+                                    class="waves-effect waves-light black white-text btn float-right">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<!-- At some point lets bring this local https://ckeditor.com/docs/ckeditor5/latest/builds/guides/quick-start.html#classic-editor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
+  <script>
+     ClassicEditor
+        .create( document.querySelector( '#rules' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+  </script>
+{% endblock scripts %}

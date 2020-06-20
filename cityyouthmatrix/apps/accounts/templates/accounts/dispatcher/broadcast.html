@@ -1,0 +1,40 @@
+{% extends 'accounts/dispatcher/base-dispatcher.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="notifications" class="waves-effect waves-light white-text btn black float-right">All Broadcasts</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">New Broadcast</h4>
+                <div class="row">
+                    <form class="col s12">
+                       <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                  <label for="textarea1">Broadcast Message</label>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col l12">
+                                <button type="submit"
+                                    class="waves-effect waves-light black white-text btn float-right">Save
+                                    Broadcast</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'accounts/dispatcher/base-dispatcher.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="familyinfo" class="waves-effect waves-light btn float-right">Add New
+                Family</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">Manage Families</h4>
+                <table class="highlight responsive-table striped datatable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Info</th>
+                            <th>Info</th>
+                            <th>Info</th>
+                            <th>Info</th>
+                            <th>Info</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td><a href="familyinfo"><i class="material-icons">edit</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td><a href="familyinfo"><i class="material-icons">edit</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td><a href="familyinfo"><i class="material-icons">edit</i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
