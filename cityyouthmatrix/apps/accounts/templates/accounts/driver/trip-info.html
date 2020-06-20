@@ -1,0 +1,147 @@
+{% extends 'accounts/driver/base-driver.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="driver" class="waves-effect waves-light white-text btn black float-right">Back To Dash</a>
+        </div>  
+    </div>  
+    <div class="row">
+        <div class="card-panel gray">
+            <form class="mt-3">
+                <div class="row">
+                    <h5 class="section-label mt-5">General</h5>
+                    <div class="input-field col s3">
+                        <input disabled value="Sally J" id="disabled" type="text" class="validate">
+                        <label for="disabled">Primary Contact Name</label>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <input disabled value="555-555-5555" id="disabled" type="text" class="validate">
+                        <label for="disabled">Primary Contact Number</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input disabled value="12/24/20" id="disabled" type="text" class="validate">
+                        <label for="disabled">Date</label>
+                    </div>
+
+                    <div class="input-field col s3">
+                        <input disabled value="17:30" id="disabled" type="text" class="validate">
+                        <label for="disabled">Time</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Trip Completed?</span>
+                        </label>
+                    </div>
+                    <div class="input-field col s3">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Return Requested?</span>
+                        </label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" disabled />
+                        <label for="disabled">Additional Requests</label>
+                    </div>
+                </div>        
+                <div class="row">
+                    <h5 class="section-label mt-5">Pickup Info</h5>
+                    <div class="input-field col s4">
+                        <input disabled id="pickup_address" type="text" class="validate">
+                        <label for="pickup_address">Address 1</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input disabled id="address2" type="text" class="validate">
+                        <label for="address2">Address 2</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input disabled id="zip" type="text" class="validate">
+                        <label for="zip">Zip Code</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <h5 class="section-label mt-5">Tag Alongs</h5>
+                    <div class="col s6 offset-s3">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Alvin</td>
+                                    <td>16</td>
+                                </tr>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>11</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>    
+                </div> 
+                <div class="row">
+                    <h5 class="section-label mt-5">Notes</h5>
+                    <div class="input-field col s12">
+                        <textarea id="drivernotes" class="materialize-textarea"></textarea>
+                        <label for="drivernotes">Notes on Trip</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col l2">
+                        <a href="#cancel" class="modal-trigger waves-effect waves-light red white-text btn">Cancel Trip</a>
+                    </div>    
+                    <div class="col l10">
+                        <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save Trip</button>
+                    </div>  
+                </div>  
+            </form>  
+        </div>       
+    </div>  
+    <div id="cancel" class="modal modal-fixed-footer">
+        <form>
+            <div class="modal-content">
+                <h4>Canceling Trip #00-69-56</h4>
+                <div class="row">  
+                    <div class="input-field col s12">
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose Cancellation Category</option>
+                            <option value="1">Facility Problems</option>
+                            <option value="2">Inclement Weather</option>
+                            <option value="3">Family Emergency</option>
+                            <option value="4">Lack Of Drivers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="cancellationAdditional" class="materialize-textarea"></textarea>
+                        <label for="cancellationAdditional">Additional Info</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                 <a href="#!" class="modal-close waves-effect black white-text btn-flat">Exit Without Canceling</a>
+                <a class="waves-effect waves-light btn" href="#!">Save</a>
+            </div>
+        </form>
+    </div>
+</div>  
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

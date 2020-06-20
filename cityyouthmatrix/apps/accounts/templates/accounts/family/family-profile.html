@@ -1,0 +1,171 @@
+{% extends 'accounts/family/base-family.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col l12">
+          <a href="family" class="waves-effect waves-light white-text btn black float-right">Back To Dash</a>
+        </div>  
+      </div>  
+      <div class="row">
+        <div class="col l12">
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Manage Family</h4> 
+            <div class="row">
+              <div class="row">
+                <div class="col s12">
+                  <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#contact">Contact</a></li>
+                    <li class="tab col s3"><a href="#address">Address</a></li>
+                    <li class="tab col s3"><a href="#members">Family Members</a></li>
+                  </ul>
+                </div>
+                <div id="contact" class="col s12">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input  id="firstName" type="text" class="validate">
+                        <label for="firstName">First Name Of Primary Contact</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="lastName" type="text" class="validate">
+                        <label for="lastName">Last Name Of Primary Contact</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="cellPhone" type="text" class="validate">
+                        <label for="cellPhone">Cell Phone Number</label>
+                      </div>
+                       <div class="input-field col s6">
+                        <select class="select">
+                          <option value="" disabled selected>Language</option>
+                          <option value="1">English</option>
+                          <option value="2">Spanish</option>
+                        </select>
+                      </div> 
+                    </div>   
+                    <div class="row">
+                      <div class="col l12">
+                        <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save</button>
+                      </div>  
+                    </div>
+                  </form>
+                </div>
+                <div id="address" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="Address1" type="text" class="validate">
+                      <label for="Address1">Home address Line 1</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="Address2" type="text" class="validate">
+                      <label for="Address2">Home address Line 2</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="city" type="text" class="validate">
+                      <label for="city">City</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <select class="select">
+                        <option value="" disabled selected>Choose your State</option>
+                        <option value="1">MD</option>
+                        <option value="2">PA</option>
+                        <option value="3">WV</option>
+                      </select>
+                    </div>  
+
+                    <div class="input-field col s4">
+                      <input id="zip" type="text" class="validate">
+                      <label for="zip">Zip</label>
+                    </div>
+                  </div>  
+                  <div class="row">
+                    <div class="col l12">
+                      <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save</button>
+                    </div>  
+                  </div> 
+                </div>
+                <div id="members" class="col s12">
+                  <form class="col s12 mt-3">
+                     <h5 class="section-label">Primary Contact</h5>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input  id="firstName" type="text" class="validate">
+                        <label for="firstName">First Name Of Primary Contact</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="age" type="text" class="validate">
+                        <label for="age">Age</label>
+                      </div>
+                    </div>
+                    <div id="additionalMembers">
+                      <h5 class="section-label">Family Members</h5>
+                      <div class="row">
+                        <div class="input-field col s3">
+                          <input id="username" type="text" class="validate">
+                          <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input id="password" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                         <div class="input-field col s3">
+                          <input id="age" type="text" class="validate">
+                          <label for="age">Age</label>
+                        </div>
+                        <div class="input-field col s3">
+                          <input id="cellPhone" type="text" class="validate">
+                          <label for="cellPhone">Contact Phone Number</label>
+                        </div>
+                      </div>
+                    </div> 
+                    <p class="fancy-text"><span class="btn-floating btn-small waves-effect waves-light red" id="add"><i class="sm material-icons">add</i></span> Add Additional Family members </p>
+                    <div class="row">
+                      <div class="col l12">
+                        <button type="submit" class="waves-effect waves-light black white-text btn float-right mt-3">Save</button>
+                      </div>  
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>  
+      </div> 
+    </div>   
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    var nextId = 0
+    , container = document.getElementById('additionalMembers');
+
+    function addLabel() {
+        var d = document.createElement("div");
+        d.id = "member" + nextId;
+        d.innerHTML = "<div class='row'><div class='input-field col s3'> <input id='username"+nextId+"' type='text' class='validate'><label for='username"+nextId+"'>Username</label> </div><div class='input-field col s3'> <input id='password"+nextId+"' type='password' class='validate'><label for='password"+nextId+"'>Password</label> </div><div class='input-field col s3'><input id='age"+nextId+"' type='text' class='validate'><label for='age"+nextId+"'>Age</label></div><div class='input-field col s3'><input id='cellPhone"+nextId+"' type='text' class='validate'><label for='cellPhone"+nextId+"'>Contact Phone Number</label></div></div>";
+        container.appendChild(d);
+        nextId += 1;
+    }
+    document.getElementById('add').onclick = function(){
+        addLabel();
+    };
+
+
+</script>
+{% endblock scripts %}
