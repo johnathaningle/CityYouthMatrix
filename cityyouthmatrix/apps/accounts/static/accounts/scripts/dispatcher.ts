@@ -23,7 +23,12 @@ export function dispatch() {
 
     if(calendarEl != undefined) {
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: [ 'dayGrid' ]
+            plugins: [ 'dayGrid', 'googleCalendar' ],
+            googleCalendarApiKey: '<YOUR API KEY>',
+            events: {
+                googleCalendarId: 'abcd1234@group.calendar.google.com',
+                className: 'gcal-event' // an option!
+            }
         });
     
         calendar.render();

@@ -27,6 +27,8 @@ declare namespace FullCalendar {
     }
     interface CalendarOptions {
         plugins: Array<string>
+        googleCalendarApiKey: string
+        events: any
     }
 }
 
