@@ -1,0 +1,197 @@
+{% extends 'accounts/family/base-family.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="family" class="waves-effect waves-light white-text btn black float-right">Back To Dash</a>
+        </div>  
+    </div>  
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#tab1">Pickup Trip</a></li>
+                <li class="tab col s3 disabled" id="returnTrip"><a href="#tab2">Return Trip</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="col s12">
+            <div class="card-panel gray">
+                <form class="mt-3">
+                    <h5 class="section-label">Pick Up Trip</h5>
+                    <div class="input-field col s6">
+                        <p>Primary Rider</p>
+                        <select class="select" id="familySelect">
+                            <option value="" disabled selected>Primary rider</option>
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="input-field col s6">
+                        <p>Tag-along Riders</p>
+                        <select class="select" multiple id="passengers">
+                            <option value="" disabled selected>Select</option>
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="row">
+                         <div class="input-field col s3">
+                            <label>
+                                <input type="checkbox" id="returnRequested"/>
+                                <span>Return Requested?</span>
+                            </label>
+                        </div>
+                        <div class="input-field col s3">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Carseat Requsted?</span>
+                            </label>
+                        </div> 
+                        <div class="input-field col s3">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Booster Seat Requested?</span>
+                            </label>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="text" class="datepicker">
+                            <label for="startDate">Date</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="text" class="timepicker">
+                            <label for="time">Time</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="contactCell" type="text" class="validate">
+                            <label for="contactCell">Contact Phone Number</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="pickup_address" type="text" class="validate">
+                            <label for="pickup_address">Address 1</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="address2" type="text" class="validate">
+                            <label for="address2">Address 2</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="zip" type="text" class="validate">
+                            <label for="zip">Zip Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="additionalInfo" type="text" class="validate">
+                            <label for="additionalInfo">Additional Info</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l12">
+                            <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save Trip</button>
+                        </div>  
+                    </div>
+                </form>    
+            </div>    
+        </div>
+        <div id="tab2" class="col s12">
+             <div class="card-panel gray">
+                <form class="mt-3">
+                    <h5 class="section-label">Return Trip</h5>
+                    <div class="input-field col s6">
+                        <p>Primary Rider</p>
+                        <select class="select" id="familySelect">
+                            <option value="" disabled selected>Primary rider</option>
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="input-field col s6">
+                        <p>Tag-along Riders</p>
+                        <select class="select" multiple id="passengers">
+                            <option value="" disabled selected>Select</option>
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Carseat Requsted?</span>
+                            </label>
+                        </div> 
+                        <div class="input-field col s6">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Booster Seat Requested?</span>
+                            </label>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="text" class="datepicker">
+                            <label for="startDate">Date</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="text" class="timepicker">
+                            <label for="time">Time</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="contactCell" type="text" class="validate">
+                            <label for="contactCell">Contact Phone Number</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="return_address" type="text" class="validate">
+                            <label for="return_address">Address 1</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="address2" type="text" class="validate">
+                            <label for="address2">Address 2</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="zip" type="text" class="validate">
+                            <label for="zip">Zip Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="additionalInfo" type="text" class="validate">
+                            <label for="additionalInfo">Additional Info</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col l12">
+                            <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save Trip</button>
+                        </div>  
+                    </div>
+                </form>    
+            </div>
+
+        </div>
+    </div>  
+</div>  
+{% endblock content %}
+
+{% block scripts %}
+<script>
+document.getElementById("returnRequested").addEventListener("change", getReturnInfo);
+function getReturnInfo(){
+    if (this.checked = true){
+        document.getElementById('returnTrip').classList.remove("disabled");
+    }
+}
+
+</script> 
+{% endblock scripts %}

@@ -1,0 +1,49 @@
+{% extends 'accounts/driver/base-driver.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">Broadcasts</h4>
+                <table class="highlight responsive-table striped datatable">
+                    <thead>
+                        <tr>
+                            <th>Notification</th>
+                            <th>Date Sent</th>
+                            <th>Time Sent</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                        </tr>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                        </tr>
+                        <tr>
+                            <td>Lorum</td>
+                            <td>Lorum Ipsum Delor</td>
+                            <td>Lorum Ipsum Delor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    var dataTable = new DataTable(".datatable",{
+    perPage:50
+  });
+</script>
+{% endblock scripts %}

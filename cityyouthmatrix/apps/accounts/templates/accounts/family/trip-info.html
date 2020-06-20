@@ -1,0 +1,146 @@
+{% extends 'accounts/family/base-family.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="family" class="waves-effect waves-light white-text btn black float-right">Back To Trip Listing</a>
+            <a href="#cancel" class="modal-trigger waves-effect waves-light red white-text btn">Cancel Trip</a>
+        </div>  
+    </div>  
+    <div class="row">
+        <div class="card-panel gray">
+                <form class="mt-1">
+                     <div class="row">
+                        <div class="input-field col s3">
+                            <label>
+                                <input type="checkbox" id="completed"/>
+                                <span>Trip Completed?</span>
+                            </label>
+                        </div>
+                    </div>
+                    <h5 class="section-label mt-5">Trip Info</h5>
+                    <div class="input-field col s6">
+                        <p>Primary Rider</p>
+                        <select class="select" id="familySelect">
+                            <option value="" disabled selected>Primary rider</option>
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="input-field col s6">
+                        <p>Tag-along Riders</p>
+                        <select class="select" multiple id="passengers">
+                            <option value="1">Option 1, age 12</option>
+                            <option value="2">Option 2, age 14</option>
+                            <option value="3">Option 3, age 15</option>
+                        </select>
+                    </div>  
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Carseat Requsted?</span>
+                            </label>
+                        </div> 
+                        <div class="input-field col s6">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Booster Seat Requested?</span>
+                            </label>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="text" class="datepicker">
+                            <label for="startDate">Date</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="text" class="timepicker">
+                            <label for="time">Time</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="contactCell" type="text" class="validate">
+                            <label for="contactCell">Contact Phone Number</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="return_address" type="text" class="validate">
+                            <label for="return_address">Address 1</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="address2" type="text" class="validate">
+                            <label for="address2">Address 2</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="zip" type="text" class="validate">
+                            <label for="zip">Zip Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="additionalInfo" type="text" class="validate">
+                            <label for="additionalInfo">Additional Info</label>
+                        </div>
+                    </div>
+                    <div class="row" id="completedNotes" style="display:none">
+                        <div class="input-field col s12">
+                            <input id="returnFamilyNotes" type="text" class="validate">
+                            <label for="returnFamilyNotes">Notes about this trip</label>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col l12">
+                            <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save Trip</button>
+                        </div>  
+                    </div>
+                </form>    
+            </div>
+    </div>  
+</div>  
+ <div id="cancel" class="modal modal-fixed-footer">
+        <form>
+            <div class="modal-content">
+                <h4>Canceling Trip #00-69-56</h4>
+                <div class="row">  
+                    <div class="input-field col s12">
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose Cancellation Category</option>
+                            <option value="1">Facility Problems</option>
+                            <option value="2">Inclement Weather</option>
+                            <option value="3">Family Emergency</option>
+                            <option value="4">Lack Of Drivers</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="cancellationAdditional" class="materialize-textarea"></textarea>
+                        <label for="cancellationAdditional">Additional Info</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect black white-text btn-flat">Exit Without Canceling</a>
+                <a class="waves-effect waves-light btn" href="#!">Save</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+document.getElementById("completed").addEventListener("change", getReturnInfo);
+function getReturnInfo(){
+    if (this.checked = true){
+        document.getElementById('completedNotes').style.display = 'block';
+    }
+}
+
+</script> 
+{% endblock scripts %}
