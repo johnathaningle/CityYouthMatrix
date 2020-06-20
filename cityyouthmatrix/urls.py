@@ -24,8 +24,11 @@ from cityyouthmatrix.apps.accounts.views import (
     home, 
     manage_drivers,
     manage_families,
+    new_family,
     new_driver,
-    new_family
+    manage_trips,
+    trip_info,
+    broadcast
 )
 
 urlpatterns = [
@@ -37,5 +40,8 @@ urlpatterns = [
     path("newfamily", new_family),
     path("", home),
     path("api/getdrivers", get_drivers),
-    path("api/adddriver", add_driver)
+    path("api/adddriver", add_driver),
+    path("managetrips", manage_trips),
+    path("tripinfo", trip_info),
+    path("broadcast", broadcast)
 ]
