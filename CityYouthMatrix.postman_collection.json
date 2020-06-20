@@ -46,12 +46,12 @@
 					"mode": "formdata",
 					"formdata": [
 						{
-							"key": "make",
+							"key": "car_make",
 							"value": "Honda",
 							"type": "text"
 						},
 						{
-							"key": "model",
+							"key": "car_model",
 							"value": "Accord",
 							"type": "text"
 						},
@@ -94,6 +94,51 @@
 							"value": null,
 							"disabled": true
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "{{$randomAdjective}}",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "{{$randomAdjective}}",
+							"type": "text"
+						},
+						{
+							"key": "contact_number",
+							"value": "{{$randomPhoneNumber}}",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "{{$randomEmail}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/adduser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"adduser"
 					]
 				}
 			},
