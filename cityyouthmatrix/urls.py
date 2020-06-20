@@ -31,7 +31,8 @@ from cityyouthmatrix.apps.accounts.views import (
     broadcast,
     notifications,
     dispatcher_profile,
-    manage_rules
+    manage_rules,
+    new_trip
 )
 
 urlpatterns = [
@@ -50,4 +51,5 @@ urlpatterns = [
     path("dispatcher/notifications", notifications),
     path("dispatcher/profile", dispatcher_profile),
     path("dispatcher/rules", manage_rules),
+    path("dispatcher/newtrip", new_trip),
 ]
