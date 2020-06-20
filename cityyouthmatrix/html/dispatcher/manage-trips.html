@@ -6,7 +6,6 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../assets/plugins/datatables/vanilla-dataTables.css"  media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="../assets/plugins/fullcalendar/main.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../assets/css/main.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../assets/css/mobile.css"  media="screen,projection"/>
 
@@ -50,13 +49,17 @@
       <li><a href="#!" class="waves-effect"><i class="material-icons">logout</i>Log Out</a></li>
     </ul>
     <!-- Start Inner Goodness -->
- 
-    <div class="mt-5">
+    <div class="container mt-5">
       <div class="row">
-        <div class="col l6 m6 s12">
-          <div class="card-panel gray">
-            <h4 class="dashboard-card-header">Manage Trips</h4> 
-            <table class="highlight responsive-table striped datatable2">
+        <div class="col l12">
+          <a href="trip-info.html" class="waves-effect waves-light white-text btn float-right">Add New Trip</a>
+        </div>  
+      </div>  
+      <div class="row">
+          <div class="col l12">
+            <div class="card-panel gray">
+              <h4 class="dashboard-card-header">Manage Trips</h4> 
+               <table class="highlight responsive-table striped datatable">
               <thead>
                 <tr>
                   <th>Date</th>
@@ -66,7 +69,7 @@
                   <th>Pickup</th>
                   <th>Drop Off</th>
                   <th>Contact #</th>
-                  <th>Return?</th>
+                  <th>Return Trip?</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -81,7 +84,9 @@
                   <td>5678 Center St 21740</td>
                   <td>240-310-0065</td>
                   <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
+                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a>
+                      <a href="#cancel" class="modal-trigger"><i class="material-icons">delete</i></a>
+                  </td>  
                 </tr>
                 <tr>
                   <td>6/24/20</td>
@@ -92,7 +97,9 @@
                   <td>5678 Center St 21740</td>
                   <td>240-310-0065</td>
                   <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
+                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a>
+                      <a href="#cancel" class="modal-trigger"><i class="material-icons">delete</i></a>
+                  </td>  
                 </tr>
                 <tr>
                   <td>6/24/20</td>
@@ -103,87 +110,55 @@
                   <td>5678 Center St 21740</td>
                   <td>240-310-0065</td>
                   <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
+                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a>
+                      <a href="#cancel" class="modal-trigger"><i class="material-icons">delete</i></a>
+                  </td>  
                 </tr>
               </tbody>
             </table>
+            </div>
+          </div>  
+       </div> 
+         <div id="cancel" class="modal modal-fixed-footer">
+             <form>
+              <div class="modal-content">
+                <h4>Canceling Trip #00-69-56</h4>
+                 <div class="row">  
+                    <div class="input-field col s12">
+                        <select class="browser-default">
+                          <option value="" disabled selected>Choose Cancellation Category</option>
+                          <option value="1">Facility Problems</option>
+                          <option value="2">Inclement Weather</option>
+                          <option value="3">Family Emergency</option>
+                          <option value="4">Lack Of Drivers</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="cancellationAdditional" class="materialize-textarea"></textarea>
+                        <label for="cancellationAdditional">Additional Info</label>
+                      </div>
+                  </div>
+                 
+              </div>
+              <div class="modal-footer">
+                <a class="waves-effect waves-light btn" href="#!">Save</a>
+              </div>
+            </form>
           </div>
-
-          <div class="card-panel gray">
-            <h4 class="dashboard-card-header">Unassigned Trips</h4> 
-            <table class="highlight responsive-table striped datatable">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Family</th>
-                  <th>Adults/Kids</th>
-                  <th>Pickup</th>
-                  <th>Drop Off</th>
-                  <th>Contact #</th>
-                  <th>Return?</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>6/24/20</td>
-                  <td>18:30</td>
-                  <td>Joneston</td>
-                  <td>1/2</td>
-                  <td>1234 Center St 21740</td>
-                  <td>5678 Center St 21740</td>
-                  <td>240-310-0065</td>
-                  <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
-                </tr>
-                <tr>
-                  <td>6/24/20</td>
-                  <td>18:30</td>
-                  <td>Joneston</td>
-                  <td>1/2</td>
-                  <td>1234 Center St 21740</td>
-                  <td>5678 Center St 21740</td>
-                  <td>240-310-0065</td>
-                  <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
-                </tr>
-                <tr>
-                  <td>6/24/20</td>
-                  <td>18:30</td>
-                  <td>Joneston</td>
-                  <td>1/2</td>
-                  <td>1234 Center St 21740</td>
-                  <td>5678 Center St 21740</td>
-                  <td>240-310-0065</td>
-                  <td><i class="material-icons">check</i></td>
-                  <td><a href="trip-info.html"><i class="material-icons">edit</i></a></td>  
-                </tr>
-              </tbody>
-            </table>
-          </div>
-            
-        </div>
-        <div class="col l6 m6 s12">
-          <div class="card-panel gray">
-            <h4 class="dashboard-card-header">Trip Calendar</h4> 
-            <div id="calendar"></div>
-
-          </div>
-        </div>
-      </div> 
-    </div> 
+    </div>   
     <!-- End Inner Goodness -->
   </main>  
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="../assets/plugins/materialize/js/materialize.min.js"></script>
   <script type="text/javascript" src="../assets/plugins/datatables/vanilla-dataTables.js"></script>
-  <script type="text/javascript" src="../assets/plugins/fullcalendar/main.js"></script>
-  <script src='../assets/plugins/fullcalendar/google-main.js'></script>
-  <script src='../assets/plugins/fullcalendar/daygrid-main.js'></script>
   <script type="text/javascript" src="../assets/js/main.js"></script>
-  <script type="text/javascript" src="../assets/js/dispatcher.js"></script>
+  <script>
+    var dataTable = new DataTable(".datatable",{
+    perPage:50
+  });
+</script>
 
 </body>
 </html>
