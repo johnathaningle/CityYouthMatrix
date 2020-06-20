@@ -1,0 +1,46 @@
+{% extends 'accounts/dispatcher/base-dispatcher.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">Manage profile</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="firstName" type="text" class="validate">
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="lastName" type="text" class="validate">
+                                <label for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col l12">
+                                <button type="submit"
+                                    class="waves-effect waves-light black white-text btn float-right">Save
+                                    Profile</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

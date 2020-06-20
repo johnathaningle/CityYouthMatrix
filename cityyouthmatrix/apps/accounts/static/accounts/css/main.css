@@ -1,6 +1,9 @@
 /* ==========================================================================
 Main styles/classes
 ========================================================================== */
+body{
+    font-family: 'Raleway', sans-serif;
+}
 .pt-0 {
     padding-top: 0!important;
 }
@@ -135,6 +138,13 @@ hr.full{
     max-width: 100%;
     height: auto;
 }
+.tabs .tab.disabled a, .tabs .tab.disabled a:hover {
+    color: rgb(144, 144, 144);
+    cursor: default;
+}
+.tabs .tab a {
+    font-weight: 700;
+}
 /* ==========================================================================
 login
 ========================================================================== */
@@ -197,4 +207,7 @@ hr{
         min-height: 60px;
         padding-left: 72px;
         position: relative;
+    }
+    td a{
+        color: #f44336;
     }

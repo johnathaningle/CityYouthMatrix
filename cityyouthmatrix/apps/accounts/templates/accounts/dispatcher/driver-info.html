@@ -1,0 +1,76 @@
+{% extends 'accounts/dispatcher/base-dispatcher.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col l12">
+            <a href="managedrivers" class="waves-effect waves-light white-text btn black float-right">Back To
+                Driver Listing</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l12">
+            <div class="card-panel gray">
+                <h4 class="dashboard-card-header">Add New Driver</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Placeholder" id="firstName" type="text" class="validate">
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="lastName" type="text" class="validate">
+                                <label for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="cellPhone" type="text" class="validate">
+                                <label for="cellPhone">Cell Phone Number</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="driversLicense" type="text" class="validate">
+                                <label for="driversLicense">Driver's License Number</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <div class="file-field input-field">
+                                    <div class="btn">
+                                        <span>File</span>
+                                        <input type="file" multiple>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text"
+                                            placeholder="Upload one or more files">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col l12">
+                                <button type="submit"
+                                    class="waves-effect waves-light black white-text btn float-right">Save
+                                    Driver</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
