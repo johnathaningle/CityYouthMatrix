@@ -14,11 +14,11 @@ def manage_drivers(request: HttpRequest):
 def manage_families(request: HttpRequest):
     return render(request, "accounts/dispatcher/manage-families.html")
 
-def new_family(request: HttpRequest):
-    return render(request, "accounts/dispatcher/new-family.html")
+def family_info(request: HttpRequest):
+    return render(request, "accounts/dispatcher/family-info.html")
 
-def new_driver(request: HttpRequest):
-    return render(request, "accounts/dispatcher/new-driver.html")
+def driver_info(request: HttpRequest):
+    return render(request, "accounts/dispatcher/driver-info.html")
 
 def manage_trips(request: HttpRequest):
     return render(request, "accounts/dispatcher/manage-trips.html")    
@@ -27,4 +27,13 @@ def trip_info(request: HttpRequest):
     return render(request, "accounts/dispatcher/trip-info.html")    
 
 def broadcast(request: HttpRequest):
-    return render(request, "accounts/dispatcher/broadcast.html")    
+    return render(request, "accounts/dispatcher/broadcast.html")   
+
+def notifications(request: HttpRequest):
+    return render(request, "accounts/dispatcher/notifications.html")  
+
+def dispatcher_profile(request: HttpRequest):
+    return render(request, "accounts/dispatcher/profile.html")     
+
+def manage_rules(request: HttpRequest):
+    return render(request, "accounts/dispatcher/rules.html")        

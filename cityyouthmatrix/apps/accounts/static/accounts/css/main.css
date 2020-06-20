@@ -198,3 +198,6 @@ hr{
         padding-left: 72px;
         position: relative;
     }
+    td a{
+        color: #f44336;
+    }
