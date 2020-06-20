@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/plugins/datatables/vanilla-dataTables.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/css/main.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../assets/css/mobile.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+  <main id="dispatcher">
+    <nav>
+      <div class="nav-wrapper">
+        <!-- <a href="#" class="brand-logo">Logo</a> -->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light red white-text btn">BROADCAST NEED</a></li>
+          <li><a href=""><i class="material-icons">notifications</i></a></li>
+          <li><a href=""><i class="material-icons">settings</i></a></li>
+          <li><a href=""><i class="material-icons">logout</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background">
+          <img src="https://via.placeholder.com/500/000000/FFFFFF/">
+        </div>
+        <a href="#user"><img class="circle" src="https://via.placeholder.com/150"></a>
+        <a href="#name"><span class="white-text name">John Doe</span></a>
+        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">cloud</i>Dashboard</a></li>
+      <li><a href="manage-drivers.html" class="waves-effect"><i class="material-icons">directions_car</i>Drivers</a></li>
+      <li><a href="manage-families.html" class="waves-effect"><i class="material-icons">people_outline</i>Families</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">report</i>Broadcast needs</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">place</i>Trip Management</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">announcement</i>Broadcast Notification</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">settings</i>Manage Profile</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">note</i>Reporting</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">edit</i>Update Terms and Rules</a></li>
+      <li><div class="divider"></div></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">logout</i>Log Out</a></li>
+    </ul>
+    <!-- Start Inner Goodness -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col l12">
+          <a href="manage-trips.html" class="waves-effect waves-light white-text btn black float-right">Back To Trip Listing</a>
+        </div>  
+      </div>  
+      <div class="row">
+        <div class="col l12">
+          <div class="card-panel gray">
+            <h4 class="dashboard-card-header">Add New Trip</h4> 
+            <div class="row">
+              <form>
+                <p>Please choose the family that you are requesting this trip for</p>
+                  <select class="browser-default" id="familySelect">
+                    <option value="" disabled selected>Select</option>
+                    <option value="1">Family One</option>
+                    <option value="2">Family Two</option>
+                    <option value="3">Family Three</option>
+                  </select>
+              </form>  
+
+              <form>
+                  <div id="tripInformation" style="display:none">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <p>Please choose the primary Rider</p>
+                        <select class="select" id="familySelect">
+                          <option value="" disabled selected>Primary rider</option>
+                          <option value="1">John B</option>
+                          <option value="2">Sally F</option>
+                          <option value="3">Tammy R</option>
+                        </select>
+                      </div>  
+                      <div class="input-field col s6">
+                        <p>Please choose the tag-along Riders</p>
+                        <select class="select" multiple>
+                          <option value="" disabled selected>Select</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                      </div>  
+                    </div> 
+                  <h5 class="section-label">Pick Up Trip</h5>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input type="text" class="datepicker">
+                      <label for="startDate">Date</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input type="text" class="timepicker">
+                      <label for="time">Time</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="contactCell" type="text" class="validate">
+                      <label for="contactCell">Contact Phone Number</label>
+                    </div>
+                    
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="address1" type="text" class="validate">
+                      <label for="address1">Address 1</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="address2" type="text" class="validate">
+                      <label for="address2">Address 2</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="zip" type="text" class="validate">
+                      <label for="zip">Zip Code</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="additionalInfo" type="text" class="validate">
+                      <label for="additionalInfo">Additional Info</label>
+                    </div>
+                  </div>  
+                  <h5 class="section-label">Return Trip <small>(if applicable)</small></h5>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input type="text" class="datepicker">
+                      <label for="returnstartDate">Date</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input type="text" class="timepicker">
+                      <label for="time">Time</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="returncontactCell" type="text" class="validate">
+                      <label for="returncontactCell">Contact Phone Number</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input id="returnaddress1" type="text" class="validate">
+                      <label for="returnaddress1">Address 1</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="returnaddress2" type="text" class="validate">
+                      <label for="returnaddress2">Address 2</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="returnzip" type="text" class="validate">
+                      <label for="returnzip">Zip Code</label>
+                    </div>
+                  </div>
+                   <div class="row">
+                    <div class="input-field col s12">
+                      <input id="returnadditionalInfo" type="text" class="validate">
+                      <label for="returnadditionalInfo">Additional Info</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col l12">
+                      <button type="submit" class="waves-effect waves-light black white-text btn float-right">Save Trip</button>
+                    </div>  
+                  </div>  
+              </form>
+             
+            </div>  
+          </div>
+        </div>  
+      </div> 
+    </div>   
+    <!-- End Inner Goodness -->
+  </main>  
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="../assets/plugins/materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../assets/js/main.js"></script>
+  <script>
+     // This will invole ajaxing the family members into this form
+    document.getElementById("familySelect").addEventListener("change", getFamilyInfo);
+    function getFamilyInfo(){
+      if (this.value > 0){
+        document.getElementById('tripInformation').style.display = 'block';
+      }
+    }
+
+   </script> 
+
+
+</body>
+</html>
