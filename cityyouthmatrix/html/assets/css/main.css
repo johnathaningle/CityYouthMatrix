@@ -76,7 +76,6 @@ Main styles/classes
 }
 .white-hr{
 	border-color:#fff;
-	float:left;
 }
 .clearfix {
   overflow: auto;
@@ -112,7 +111,7 @@ nav{
 .float-right{
 	float:right;
 }
-.float:left{
+.float-left{
 	float:left;
 }
 .dashboard-card-header{
@@ -127,6 +126,15 @@ hr.full{
     border: 1px solid #ccc;
     width: 100%;
 }
+.center-block{
+	display:block;
+	margin:0 auto;
+}
+.img-responsive{
+	display: block;
+    max-width: 100%;
+    height: auto;
+}
 /* ==========================================================================
 login
 ========================================================================== */
@@ -139,13 +147,16 @@ hr{
 	width: 5rem;
 }
 .left-wrap{
-	padding: 31vh 2rem;
+	padding: 19vh 2rem;
 }
 .right-wrap{
 	padding: 15vh 2rem;
 }
 #login .prefix{
 	    padding: 5px;
+}
+.login-logo{
+	max-width:100px;
 }
 /* ==========================================================================
    shared dashboard

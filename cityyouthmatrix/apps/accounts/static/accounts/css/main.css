@@ -2,155 +2,119 @@
 Main styles/classes
 ========================================================================== */
 .pt-0 {
-    padding-top: 0 !important;
+    padding-top: 0!important;
 }
-
 .pt-1 {
-    padding-top: .25rem !important;
+    padding-top: .25rem!important;
 }
-
-.pt-2 {
-    padding-top: .5rem !important;
+.pt-2{
+    padding-top: .5rem!important;
 }
-
-.pt-3 {
-    padding-top: 1rem !important;
+.pt-3{
+    padding-top: 1rem!important;
 }
-
-.pt-4 {
-    padding-top: 1.5rem !important;
+.pt-4{
+    padding-top: 1.5rem!important;
 }
-
-.pt-5 {
-    padding-top: 3rem !important;
+.pt-5{
+    padding-top: 3rem!important;
 }
-
 .pb-0 {
-    padding-bottom: 0 !important;
+    padding-bottom: 0!important;
 }
-
 .pb-1 {
-    padding-bottom: .25rem !important;
+    padding-bottom: .25rem!important;
 }
-
-.pb-2 {
-    padding-bottom: .5rem !important;
+.pb-2{
+    padding-bottom: .5rem!important;
 }
-
-.pb-3 {
-    padding-bottom: 1rem !important;
+.pb-3{
+    padding-bottom: 1rem!important;
 }
-
-.pb-4 {
-    padding-bottom: 1.5rem !important;
+.pb-4{
+    padding-bottom: 1.5rem!important;
 }
-
-.pb-5 {
-    padding-bottom: 3rem !important;
+.pb-5{
+    padding-bottom: 3rem!important;
 }
 
 .mt-0 {
-    margin-top: 0 !important;
+    margin-top: 0!important;
 }
-
 .mt-1 {
-    margin-top: .25rem !important;
+    margin-top: .25rem!important;
 }
-
-.mt-2 {
-    margin-top: .5rem !important;
+.mt-2{
+    margin-top: .5rem!important;
 }
-
-.mt-3 {
-    margin-top: 1rem !important;
+.mt-3{
+    margin-top: 1rem!important;
 }
-
-.mt-4 {
-    margin-top: 1.5rem !important;
+.mt-4{
+    margin-top: 1.5rem!important;
 }
-
-.mt-5 {
-    margin-top: 3rem !important;
+.mt-5{
+    margin-top: 3rem!important;
 }
-
 .mb-0 {
-    margin-bottom: 0 !important;
+    margin-bottom: 0!important;
 }
-
 .mb-1 {
-    margin-bottom: .25rem !important;
+    margin-bottom: .25rem!important;
 }
-
-.mb-2 {
-    margin-bottom: .5rem !important;
+.mb-2{
+    margin-bottom: .5rem!important;
 }
-
-.mb-3 {
-    margin-bottom: 1rem !important;
+.mb-3{
+    margin-bottom: 1rem!important;
 }
-
-.mb-4 {
-    margin-bottom: 1.5rem !important;
+.mb-4{
+    margin-bottom: 1.5rem!important;
 }
-
-.mb-5 {
-    margin-bottom: 3rem !important;
+.mb-5{
+    margin-bottom: 3rem!important;
 }
-
-.white-hr {
-    border-color: #fff;
-    float: left;
+.white-hr{
+    border-color:#fff;
 }
-
 .clearfix {
-    overflow: auto;
+  overflow: auto;
 }
-
-.sidenav-trigger {
+.sidenav-trigger{
     position: fixed;
     top: 15px;
     left: 15px;
     color: #fff;
 }
-
-.sidenav-trigger i {
+.sidenav-trigger i{
     font-size: 30px;
 }
-
-nav {
-    background-color: #000;
+nav{
+        background-color: #000;
 }
-
-.btn {
-    background-color: #fdc137;
+.btn{
+    background-color:#fdc137;
     color: #2f2f2f;
 }
-
-.btn i {
+.btn i{
     color: #2f2f2f;
 }
-
-.btn:hover {
-    background-color: rgb(203, 154, 34)
+.btn:hover{
+    background-color:rgb(203, 154, 34)
 }
-
-.red {
-    background: #c11c4b;
+.red{
+    background:#c11c4b;
 }
-
-.red-text {
-    color: #c11c4b;
+.red-text{
+    color:#c11c4b;
 }
-
-.float-right {
-    float: right;
+.float-right{
+    float:right;
 }
-
-.float:left {
-    float: left;
+.float-left{
+    float:left;
 }
-
-.dashboard-card-header {
+.dashboard-card-header{
     font-size: 14px;
     margin: 0.02rem 0 .912rem 0;
     text-align: center;
@@ -158,96 +122,79 @@ nav {
     font-weight: 700;
     letter-spacing: 2px;
 }
-
-hr.full {
+hr.full{
     border: 1px solid #ccc;
     width: 100%;
 }
-
+.center-block{
+    display:block;
+    margin:0 auto;
+}
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 /* ==========================================================================
 login
 ========================================================================== */
-.half-bkrd {
-    height: 100vh;
-    padding: 1.5rem !important;
+.half-bkrd{
+    height:100vh;
+    padding:1.5rem!important;
 }
-
-hr {
-    border: 1px solid #000;
+hr{
+    border:1px solid #000;
     width: 5rem;
 }
-
-.left-wrap {
-    padding: 31vh 2rem;
+.left-wrap{
+    padding: 19vh 2rem;
 }
-
-.right-wrap {
+.right-wrap{
     padding: 15vh 2rem;
 }
-
-#login .prefix {
-    padding: 5px;
+#login .prefix{
+        padding: 5px;
 }
-
+.login-logo{
+    max-width:100px;
+}
 /* ==========================================================================
    shared dashboard
    ========================================================================== */
-#upcoming-trip i {
-    font-size: 16px;
+    #upcoming-trip i{
+    font-size:16px;
     margin-right: 15px;
-}
-
-.section-label {
-    font-size: 14px;
-    margin: 0.02rem 0 .912rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #666;
-    background: #eae8e8;
-    padding: 10px;
-}
-
-.fancy-text {
-    font-size: 14px;
-    margin: 0.02rem 0 .912rem 0;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #353535;
-}
-
-.tabs .tab a:hover,
-.tabs .tab a.active {
-    background-color: transparent;
-    color: #f44336;
-}
-
-.tabs .tab a:focus,
-.tabs .tab a:focus.active {
-    background-color: #fff;
-}
-
+   }
+   .section-label{
+        font-size: 14px;
+        margin: 0.02rem 0 .912rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #666;
+        background: #eae8e8;
+        padding: 10px;
+   }
+   .fancy-text{
+        font-size: 14px;
+        margin: 0.02rem 0 .912rem 0;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color:#353535;
+   }
+   .tabs .tab a:hover, .tabs .tab a.active {
+        background-color: transparent;
+        color: #f44336;
+    }
+    .tabs .tab a:focus, .tabs .tab a:focus.active {
+        background-color: #fff;
+    }
 /* ==========================================================================
    displatcher specific - maybe move to own css. IDK
    ========================================================================== */
-.collection .collection-item.avatar {
-    min-height: 60px;
-    padding-left: 72px;
-    position: relative;
-}
-
-@media(max-width:769px) {
-    .half-bkrd {
-        height: 40vh;
-        padding: 1rem;
+   .collection .collection-item.avatar {
+        min-height: 60px;
+        padding-left: 72px;
+        position: relative;
     }
-
-    .left-wrap {
-        padding: 2rem 2rem;
-    }
-
-    .right-wrap {
-        padding: 2rem 2rem;
-    }
-}
