@@ -36,4 +36,7 @@ def dispatcher_profile(request: HttpRequest):
     return render(request, "accounts/dispatcher/profile.html")     
 
 def manage_rules(request: HttpRequest):
-    return render(request, "accounts/dispatcher/rules.html")        
+    return render(request, "accounts/dispatcher/rules.html")     
+
+def new_trip(request: HttpRequest):
+    return render(request, "accounts/dispatcher/new-trip.html")        
