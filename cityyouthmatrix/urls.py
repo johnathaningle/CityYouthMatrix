@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cityyouthmatrix.apps.api.views import (
+    add_driver,
+    get_drivers
+)
 from cityyouthmatrix.apps.accounts.views import (
     dispatcher,
     home, 
@@ -31,5 +35,7 @@ urlpatterns = [
     path("managefamilies", manage_families),
     path("newdriver", new_driver),
     path("newfamily", new_family),
-    path("", home)
+    path("", home),
+    path("api/getdrivers", get_drivers),
+    path("api/adddriver", add_driver)
 ]

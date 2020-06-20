@@ -1,18 +1,15 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-      "noImplicitAny": false,
-      "noEmitOnError": false,
-      "removeComments": false,
-      "sourceMap": false,
-      "target": "es5",
-      "module": "amd",
-      "lib": [ "dom", "es6", "dom.iterable" ],
-      "typeRoots": [ "./typings", "node_modules/@types" ],
-    },
-    "include": [ ".", "./scripts" ],
-    "exclude": [
-      "node_modules"
-    ],
-  }
-  
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": false,
+    "removeComments": false,
+    "sourceMap": false,
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "dom.iterable"],
+    "typeRoots": ["./typings", "node_modules/@types"]
+  },
+  "include": [".", "./scripts"],
+  "exclude": ["node_modules"]
+}

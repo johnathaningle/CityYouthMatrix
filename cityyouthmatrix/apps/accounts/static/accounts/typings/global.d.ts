@@ -13,6 +13,22 @@ declare namespace M {
     class Dropdown {
         static init(nodes: NodeListOf<Element>, options: any): Dropdown
     }
+
+    class FormSelect {
+        static init(nodes: NodeListOf<Element>, options: any): FormSelect
+    }
+
+    class Datepicker {
+        static init(nodes: NodeListOf<Element>, options: any): Datepicker
+    }
+
+    class Timepicker {
+        static init(nodes: NodeListOf<Element>, options: any): Timepicker
+    }
+
+    class Modal {
+        static init(nodes: NodeListOf<Element>, options: any): Modal
+    }
 }
 
 
@@ -27,6 +43,8 @@ declare namespace FullCalendar {
     }
     interface CalendarOptions {
         plugins: Array<string>
+        googleCalendarApiKey: string
+        events: any
     }
 }
 

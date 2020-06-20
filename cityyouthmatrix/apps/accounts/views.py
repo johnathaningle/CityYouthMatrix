@@ -19,3 +19,4 @@ def new_family(request: HttpRequest):
 
 def new_driver(request: HttpRequest):
     return render(request, "accounts/new-driver.html")
+
