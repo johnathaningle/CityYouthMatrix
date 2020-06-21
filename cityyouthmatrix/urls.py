@@ -67,6 +67,6 @@ urlpatterns = [
     path("driver/driver", driver),
     path("driver/driver-notifications", driver_notifications),
     path("driver/driver-profile", driver_profile),
-    path("driver/driver-trip-info", driver_trip_info),
+    path("driver/tripinfo", driver_trip_info),
     path("driver/driver-site-rules", driver_site_rules)
 ]
