@@ -7,8 +7,13 @@ from django.http import HttpRequest
 def login_success(request):
     if request.user.is_superuser:
         return redirect('/admin')
-    elif request.user.driver:
-        return redirect('driver-info')
+    try:
+        if request.user.driver:
+            return redirect('driver/driver')
+        else:
+            return redirect("family-info") #this needs to be changed
+    except:
+        return redirect("driver/driver")
 
 
 def dispatcher(request: HttpRequest):
