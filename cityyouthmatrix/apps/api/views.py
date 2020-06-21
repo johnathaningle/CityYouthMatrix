@@ -1,9 +1,10 @@
+from typing import List
 from django.shortcuts import render
 from django.http import JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 
 from ..accounts.models import (
-    Driver, User
+    Driver, Family, User
 )
 
 # Create your views here.
@@ -43,3 +44,7 @@ def add_driver(request: HttpRequest) -> JsonResponse:
         return JsonResponse({"success": True}, safe=False)
     else:
         return JsonResponse({"success": False}, safe=False)
+
+def get_family_trips(request: HttpRequest):
+    families = list(Family.objects.values())
+    return JsonResponse(families, safe=False)
