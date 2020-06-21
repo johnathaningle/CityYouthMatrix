@@ -119,6 +119,12 @@ class FamilyMember(models.Model):
     last_name = models.CharField(max_length=100)
     family = models.ForeignKey(Family, on_delete=models.CASCADE)
 
+    def __str__(self):
+        last_name = ""
+        if self.last_name is not None:
+            last_name = f"{self.last_name[0]}."
+        return f"{self.first_name} {last_name} FamilyMember"
+
     @property
     def display_name(self):
         if self.member_type == FamilyMemberTypes.CHILD:

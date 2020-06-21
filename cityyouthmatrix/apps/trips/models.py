@@ -30,6 +30,10 @@ class Event(models.Model):
     address = models.ForeignKey('accounts.Address', on_delete=models.CASCADE)
     season = models.CharField(max_length=6, choices=EventSeasons.choices)
 
+    def __str__(self):
+        return self.name
+    
+
 
 class Trip(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
@@ -60,6 +64,9 @@ class Trip(models.Model):
     car_seat_required = models.BooleanField(default=False)
     booster_seat_required = models.BooleanField(default=False)
     special_needs = models.CharField(max_length=300, blank=True)
+
+    def __str__(self):
+        return f"{self.event.name} Trip"
 
     @property
     def is_available(self):
