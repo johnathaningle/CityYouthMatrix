@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
+    add_user,
     get_drivers
 )
 from cityyouthmatrix.apps.accounts.views import (
@@ -36,15 +37,16 @@ from cityyouthmatrix.apps.accounts.views import (
 )
 
 urlpatterns = [
+    path("", home),
     path('admin/', admin.site.urls),
+    path("api/getdrivers", get_drivers),
+    path("api/adddriver", add_driver),
+    path("api/adduser", add_user),
     path("dispatcher/dispatcher", dispatcher),
     path("dispatcher/managedrivers", manage_drivers),
     path("dispatcher/managefamilies", manage_families),
     path("dispatcher/driverinfo", driver_info),
     path("dispatcher/familyinfo", family_info),
-    path("", home),
-    path("api/getdrivers", get_drivers),
-    path("api/adddriver", add_driver),
     path("dispatcher/managetrips", manage_trips),
     path("dispatcher/tripinfo", trip_info),
     path("dispatcher/broadcast", broadcast),
