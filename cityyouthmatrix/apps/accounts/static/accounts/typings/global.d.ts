@@ -48,5 +48,9 @@ declare namespace FullCalendar {
     }
 }
 
+declare interface IController {
+    handleLogic(): void
+}
+
 
 

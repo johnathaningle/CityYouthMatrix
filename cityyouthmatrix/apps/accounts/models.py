@@ -72,20 +72,6 @@ class Driver(models.Model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
 
-    def from_query_dict(self, request_body: QueryDict) -> bool:
-        if request_body["is_verified"] is not None:
-            try:
-                self.is_verified = bool(request_body["is_verified"])
-            except:
-                self.is_verified = False
-        if request_body["car_make"] is not None:
-            self.car_make = request_body["car_make"]
-        if request_body["car_model"] is not None:
-            self.car_model = request_body["car_model"]
-        if request_body["license_plate"] is not None:
-            self.license_plate = request_body["license_plate"]
-
-        return True
 
 
 
@@ -132,6 +118,12 @@ class FamilyMember(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     family = models.ForeignKey(Family, on_delete=models.CASCADE)
+
+    def __str__(self):
+        last_name = ""
+        if self.last_name is not None:
+            last_name = f"{self.last_name[0]}."
+        return f"{self.first_name} {last_name} FamilyMember"
 
     @property
     def display_name(self):

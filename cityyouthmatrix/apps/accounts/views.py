@@ -49,3 +49,19 @@ def manage_rules(request: HttpRequest):
 
 def new_trip(request: HttpRequest):
     return render(request, "accounts/dispatcher/new-trip.html")
+
+#driver views
+def driver(request: HttpRequest):
+    return render(request, "accounts/driver/driver.html")
+
+def driver_profile(request: HttpRequest):
+    return render(request, "accounts/driver/driver-profile.html")
+
+def driver_notifications(request: HttpRequest):
+    return render(request, "accounts/driver/notifications.html")
+
+def driver_site_rules(request: HttpRequest):
+    return render(request, "accounts/driver/site-rules.html")
+
+def driver_trip_info(request: HttpRequest):
+    return render(request, "accounts/driver/trip-info.html")

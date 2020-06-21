@@ -18,11 +18,18 @@ import django.contrib.auth.views as auth_views
 from django.urls import path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
-    get_drivers
+    add_user,
+    get_drivers,
+    get_family_trips
 )
 from cityyouthmatrix.apps.accounts.views import (
     login_success,
     dispatcher,
+    driver,
+    driver_notifications,
+    driver_profile,
+    driver_site_rules,
+    driver_trip_info,
     home,
     manage_drivers,
     manage_families,
@@ -41,13 +48,17 @@ urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='accounts/home.html'), name='login'),
     path('login_success', login_success, name='login_success'),
     path('admin/', admin.site.urls),
+    # api section
+    path("api/getdrivers", get_drivers),
+    path("api/adddriver", add_driver),
+    path("api/adduser", add_user),
+    path("api/getfamilytrips", get_family_trips),
+    # dispatcher section
     path("dispatcher/dispatcher", dispatcher),
     path("dispatcher/managedrivers", manage_drivers),
     path("dispatcher/managefamilies", manage_families),
     path("dispatcher/driverinfo", driver_info),
     path("dispatcher/familyinfo", family_info),
-    path("api/getdrivers", get_drivers),
-    path("api/adddriver", add_driver),
     path("dispatcher/managetrips", manage_trips),
     path("dispatcher/tripinfo", trip_info),
     path("dispatcher/broadcast", broadcast),
@@ -55,4 +66,10 @@ urlpatterns = [
     path("dispatcher/profile", dispatcher_profile),
     path("dispatcher/rules", manage_rules),
     path("dispatcher/newtrip", new_trip),
+    # driver section
+    path("driver/driver", driver),
+    path("driver/driver-notifications", driver_notifications),
+    path("driver/driver-profile", driver_profile),
+    path("driver/tripinfo", driver_trip_info),
+    path("driver/driver-site-rules", driver_site_rules)
 ]
