@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import (
     Address,
     Driver,
@@ -9,11 +10,14 @@ from .models import (
     User,
 )
 
-
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('email', 'first_name', 'last_name', 'contact_number')
-    readonly_fields = ()
-    exclude = ('user_permissions', 'groups', 'username')
+class UserAdmin(BaseUserAdmin):
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')}
+        ),
+    )
+    list_display = ('email', 'first_name', 'last_name', 'is_superuser')
 
 
 class DriverAdmin(admin.ModelAdmin):
