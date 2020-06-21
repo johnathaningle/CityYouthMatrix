@@ -1,7 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render, resolve_url
 from django.http import HttpRequest
 
 # Create your views here.
+
+
+def login_success(request):
+    if request.user.is_superuser:
+        return redirect('/admin')
+    elif request.user.driver:
+        return redirect('driver-info')
+
+
 def dispatcher(request: HttpRequest):
     return render(request, "accounts/dispatcher/dispatcher.html")
 
@@ -21,22 +30,22 @@ def driver_info(request: HttpRequest):
     return render(request, "accounts/dispatcher/driver-info.html")
 
 def manage_trips(request: HttpRequest):
-    return render(request, "accounts/dispatcher/manage-trips.html")    
+    return render(request, "accounts/dispatcher/manage-trips.html")
 
 def trip_info(request: HttpRequest):
-    return render(request, "accounts/dispatcher/trip-info.html")    
+    return render(request, "accounts/dispatcher/trip-info.html")
 
 def broadcast(request: HttpRequest):
-    return render(request, "accounts/dispatcher/broadcast.html")   
+    return render(request, "accounts/dispatcher/broadcast.html")
 
 def notifications(request: HttpRequest):
-    return render(request, "accounts/dispatcher/notifications.html")  
+    return render(request, "accounts/dispatcher/notifications.html")
 
 def dispatcher_profile(request: HttpRequest):
-    return render(request, "accounts/dispatcher/profile.html")     
+    return render(request, "accounts/dispatcher/profile.html")
 
 def manage_rules(request: HttpRequest):
-    return render(request, "accounts/dispatcher/rules.html")     
+    return render(request, "accounts/dispatcher/rules.html")
 
 def new_trip(request: HttpRequest):
     return render(request, "accounts/dispatcher/new-trip.html")

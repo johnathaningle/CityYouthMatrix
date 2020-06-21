@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+import django.contrib.auth.views as auth_views
 from django.urls import path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
@@ -22,13 +23,9 @@ from cityyouthmatrix.apps.api.views import (
     get_family_trips
 )
 from cityyouthmatrix.apps.accounts.views import (
+    login_success,
     dispatcher,
-    driver,
-    driver_notifications,
-    driver_profile,
-    driver_site_rules,
-    driver_trip_info,
-    home, 
+    home,
     manage_drivers,
     manage_families,
     family_info,
@@ -39,11 +36,17 @@ from cityyouthmatrix.apps.accounts.views import (
     notifications,
     dispatcher_profile,
     manage_rules,
-    new_trip
+    new_trip,
+    driver,
+    driver_notifications,
+    driver_trip_info,
+    driver_profile,
+    driver_site_rules
 )
 
 urlpatterns = [
-    path("", home),
+    path('', auth_views.LoginView.as_view(template_name='accounts/home.html'), name='login'),
+    path('login_success', login_success, name='login_success'),
     path('admin/', admin.site.urls),
     # api section
     path("api/getdrivers", get_drivers),
