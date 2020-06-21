@@ -14,14 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+import django.contrib.auth.views as auth_views
 from django.urls import path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
     get_drivers
 )
 from cityyouthmatrix.apps.accounts.views import (
+    login_success,
     dispatcher,
-    home, 
+    home,
     manage_drivers,
     manage_families,
     family_info,
@@ -36,13 +38,14 @@ from cityyouthmatrix.apps.accounts.views import (
 )
 
 urlpatterns = [
+    path('', auth_views.LoginView.as_view(template_name='accounts/home.html'), name='login'),
+    path('login_success', login_success, name='login_success'),
     path('admin/', admin.site.urls),
     path("dispatcher/dispatcher", dispatcher),
     path("dispatcher/managedrivers", manage_drivers),
     path("dispatcher/managefamilies", manage_families),
     path("dispatcher/driverinfo", driver_info),
     path("dispatcher/familyinfo", family_info),
-    path("", home),
     path("api/getdrivers", get_drivers),
     path("api/adddriver", add_driver),
     path("dispatcher/managetrips", manage_trips),

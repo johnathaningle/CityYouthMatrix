@@ -20,13 +20,13 @@
         <div class="col s12 m12 l6 half-bkrd left-align">
             <div class="left-wrap">
               <img src="{% static  'accounts/img/login-logo.png' %}" class="login-logo">
-              <h1 >Youth City Matrix</h1>
+              <h1>City Youth Matrix</h1>
               <hr class="float-left">
               <div class="clearfix"></div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris suscipit urna laoreet interdum mattis. Integer vel vehicula leo. Nunc iaculis diam vitae diam commodo mattis. </p>
                <div class="clearfix"></div>
-              <button class="btn waves-effect waves-light" type="submit" name="action">Request Access</button>  
-            </div>  
+              <button class="btn waves-effect waves-light" type="submit" name="action">Request Access</button>
+            </div>
         </div>
         <div class="col s12 m12 l6 half-bkrd black center-align">
           <div class="right-wrap">
@@ -36,18 +36,21 @@
               <div class="card horizontal">
                 <div class="card-stacked ">
                   <div class="card-content">
-                    <form>
+                    <form method="post">
+                      {% csrf_token %}
                       <div class="row">
                         <div class="input-field col s12">
-                          <input id="email" type="email" class="validate">
-                          <label for="email">Email</label>
+                          <label for"{{ form.username.id_for_label }}">Email</label>
+                          {{ form.username }}
+                          {{ form.username.errors }}
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <!-- <i class="material-icons prefix z-depth-1" id="showPass">visibility_off</i> -->
-                          <input id="password" type="password" class="validate">
-                          <label for="password">Password</label>
+                          <label for="{{ form.password.id_for_label }}">Password</label>
+                          {{ form.password }}
+                          {{ form.password.errors }}
                         </div>
                       </div>
                       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -59,7 +62,7 @@
                 </div>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
   </main>
