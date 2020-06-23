@@ -13,6 +13,10 @@ class ActivityPartner(models.Model):
     name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+    
+
 
 class Event(models.Model):
     """Every event takes place at an activity partner's location
@@ -66,7 +70,7 @@ class Trip(models.Model):
     special_needs = models.CharField(max_length=300, blank=True)
 
     def __str__(self):
-        return f"{self.event.name} Trip"
+        return f"{self.event.name} Trip with the {self.family.user.last_name} Family"
 
     @property
     def is_available(self):

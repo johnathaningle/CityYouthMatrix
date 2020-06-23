@@ -19,6 +19,7 @@ from django.urls import path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
     add_user,
+    get_driver_context,
     get_drivers,
     get_family_trips
 )
@@ -58,6 +59,7 @@ urlpatterns = [
     path("api/adddriver", add_driver),
     path("api/adduser", add_user),
     path("api/getfamilytrips", get_family_trips),
+    path("api/getdrivercontext", get_driver_context),
     # dispatcher section
     path("dispatcher/dispatcher", dispatcher),
     path("dispatcher/managedrivers", manage_drivers),
