@@ -25,6 +25,11 @@ from cityyouthmatrix.apps.api.views import (
 from cityyouthmatrix.apps.accounts.views import (
     login_success,
     dispatcher,
+    driver,
+    driver_notifications,
+    driver_profile,
+    driver_site_rules,
+    driver_trip_info,
     home,
     manage_drivers,
     manage_families,
