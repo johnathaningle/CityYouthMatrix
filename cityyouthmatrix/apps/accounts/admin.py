@@ -33,6 +33,7 @@ class UserAdmin(UserAdmin):
 
 class DriverAdmin(admin.ModelAdmin):
     list_filter = ('is_verified',)
+    list_select_related = True
 
     def get_queryset(self, request):
         return super(DriverAdmin, self).get_queryset(request).select_related('user')
@@ -46,27 +47,35 @@ class FamilyAddressInline(admin.TabularInline):
 
 
 class FamilyAdmin(admin.ModelAdmin):
-    list_display = ('user', 'family_name', 'family_member_count')
+    list_display = ('user', 'family_name', 'adults', 'children')
+    list_select_related = True
     inlines = [
         FamilyMemberInline,
         FamilyAddressInline,
     ]
 
-    def get_queryset(self, request):
-        return super(FamilyAdmin, self).get_queryset(request).select_related('user')
-
     def family_name(self, obj):
         return obj.user.last_name
 
-    def family_member_count(self, obj):
-        return obj.familymember_set.count()
+    def adults(self, obj):
+        return obj.familymember_set.filter(member_type='A').count()
+
+    def children(self, obj):
+        return obj.familymember_set.filter(member_type='C').count()
 
 
 class FamilyAddressAdmin(admin.ModelAdmin):
     list_display = ('user', 'family', '__str__')
+    list_select_related = True
 
-    def get_queryset(self, request):
-        return super(FamilyAddressAdmin, self).get_queryset(request).select_related('family')
+    def user(self, obj):
+        return obj.family.user.email
+
+
+class FamilyMemberAdmin(admin.ModelAdmin):
+    list_display = ('user', 'family', 'full_name', 'member_type')
+    list_filter = ('family', 'member_type',)
+    list_select_related = True
 
     def user(self, obj):
         return obj.family.user.email
@@ -76,4 +85,4 @@ admin.site.register(User, UserAdmin)
 admin.site.register(Driver, DriverAdmin)
 admin.site.register(Family, FamilyAdmin)
 admin.site.register(FamilyAddress, FamilyAddressAdmin)
-admin.site.register(FamilyMember)
+admin.site.register(FamilyMember, FamilyMemberAdmin)

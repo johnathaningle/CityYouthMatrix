@@ -110,7 +110,6 @@ class FamilyMember(models.Model):
     class FamilyMemberTypes(models.TextChoices):
         CHILD = "C", _("Child")
         ADULT = "A", _("Adult")
-        TAG_ALONG = "T", _("Tag Along")
 
     member_type = models.CharField(
         max_length=1,
@@ -122,6 +121,10 @@ class FamilyMember(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} ({self.get_member_type_display()})'
+
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
 
     @property
     def display_name(self):

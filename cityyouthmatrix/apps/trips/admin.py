@@ -8,7 +8,21 @@ from .models import (
 from cityyouthmatrix.apps.accounts.models import FamilyMember
 
 
+class ActivityPartnerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active')
+    list_filter = ('is_active',)
+
+
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('name', 'activity_partner', 'event_datetime', 'address', 'season')
+    list_select_related = True
+    list_filter = ('activity_partner', 'season')
+
+
 class TripAdmin(admin.ModelAdmin):
+    list_display = ('event', 'family', 'pickup_driver', 'return_driver', 'is_available')
+    list_select_related = True
+    list_filter = ('event', 'family', 'pickup_driver', 'return_driver', 'pickup_completed', 'return_completed', 'is_cancelled')
     readonly_fields = ('pickup_completed_datetime', 'return_completed_datetime', 'cancelled_datetime')
     fieldsets = (
         (None, {
@@ -35,6 +49,6 @@ class TripAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Trip, TripAdmin)
-admin.site.register(Event)
+admin.site.register(Event, EventAdmin)
 admin.site.register(EventAddress)
-admin.site.register(ActivityPartner)
+admin.site.register(ActivityPartner, ActivityPartnerAdmin)

@@ -36,6 +36,8 @@ class Event(models.Model):
     name = models.CharField(max_length=200)
     activity_partner = models.ForeignKey(
         ActivityPartner,
+        null=True,
+        blank=True,
         on_delete=models.DO_NOTHING,
         limit_choices_to={'is_active': True}
     )
@@ -44,7 +46,7 @@ class Event(models.Model):
     season = models.CharField(max_length=6, choices=EventSeasons.choices)
 
     def __str__(self):
-        return f"{self.activity_partner + ' ' if self.activity_partner else ''}{self.name}"
+        return f"{str(self.activity_partner) + ' - ' if self.activity_partner else ''}{self.name}"
 
 
 class Trip(models.Model):
@@ -71,7 +73,9 @@ class Trip(models.Model):
         'accounts.Driver',
         related_name='pickup_driver',
         on_delete=models.DO_NOTHING,
-        limit_choices_to={'is_verified': True}
+        limit_choices_to={'is_verified': True},
+        null=True,
+        blank=True,
     )
     pickup_driver_notes = models.CharField(max_length=500, blank=True, help_text='Notes about the pickup from the driver')
     pickup_family_notes = models.CharField(max_length=500, blank=True, help_text='Notes about the pickup from the family')
@@ -90,7 +94,9 @@ class Trip(models.Model):
         'accounts.Driver',
         related_name='return_driver',
         on_delete=models.DO_NOTHING,
-        limit_choices_to={'is_verified': True}
+        limit_choices_to={'is_verified': True},
+        null=True,
+        blank=True,
     )
     return_driver_notes = models.CharField(max_length=500, blank=True, help_text='Notes about the return from the driver')
     return_family_notes = models.CharField(max_length=500, blank=True, help_text='Notes about the return from the family')
