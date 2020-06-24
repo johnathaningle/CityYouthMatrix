@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .forms import UserCreationForm
 from .models import (
     Address,
     Driver,
@@ -10,13 +12,27 @@ from .models import (
 )
 
 
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'contact_number')
-    readonly_fields = ()
-    exclude = ('user_permissions', 'groups', 'username')
+    fieldsets = (
+        (('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'contact_number')}),
+        (None, {'fields': ('password',)}),
+        (('Permissions'), {
+            'fields': ('is_active', 'is_staff', 'is_superuser'),
+        }),
+        (('Important dates'), {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2'),
+        }),
+    )
+    add_form = UserCreationForm
 
 
 class DriverAdmin(admin.ModelAdmin):
+    list_filter = ('is_verified',)
 
     def get_queryset(self, request):
         return super(DriverAdmin, self).get_queryset(request).select_related('user')
@@ -46,10 +62,18 @@ class FamilyAdmin(admin.ModelAdmin):
         return obj.familymember_set.count()
 
 
+class FamilyAddressAdmin(admin.ModelAdmin):
+    list_display = ('user', 'family', '__str__')
+
+    def get_queryset(self, request):
+        return super(FamilyAddressAdmin, self).get_queryset(request).select_related('family')
+
+    def user(self, obj):
+        return obj.family.user.email
+
 
 admin.site.register(User, UserAdmin)
-admin.site.register(Address)
-admin.site.register(Driver)
+admin.site.register(Driver, DriverAdmin)
 admin.site.register(Family, FamilyAdmin)
-admin.site.register(FamilyAddress)
+admin.site.register(FamilyAddress, FamilyAddressAdmin)
 admin.site.register(FamilyMember)

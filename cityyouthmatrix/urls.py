@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 import django.contrib.auth.views as auth_views
-from django.urls import path
+from django.urls import include, path
 from cityyouthmatrix.apps.api.views import (
     add_driver,
     add_user,
@@ -48,6 +48,7 @@ urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='accounts/home.html'), name='login'),
     path('login_success', login_success, name='login_success'),
     path('admin/', admin.site.urls),
+    path('chaining/', include('smart_selects.urls')),
     # api section
     path("api/getdrivers", get_drivers),
     path("api/adddriver", add_driver),

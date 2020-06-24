@@ -46,7 +46,7 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=50, verbose_name='first name')
     last_name = models.CharField(max_length=150, verbose_name='last name')
     email = models.EmailField(error_messages={'unique': 'A user with that email already exists.'}, unique=True, max_length=254, verbose_name='email address')
-    contact_number = models.CharField(max_length=15)
+    contact_number = models.CharField(max_length=15, help_text='Contact phone number')
 
     objects = CustomUserManager()
 
@@ -73,8 +73,6 @@ class Driver(models.Model):
         return f'{self.user.first_name} {self.user.last_name}'
 
 
-
-
 class Family(models.Model):
 
     class FamilyLanguages(models.TextChoices):
@@ -90,11 +88,14 @@ class Family(models.Model):
 
 
 class Address(models.Model):
-    address_1 = models.CharField(max_length=100)
-    address_2 = models.CharField(blank=True, max_length=100)
+    address_1 = models.CharField(max_length=100, help_text='Street number and name')
+    address_2 = models.CharField(blank=True, max_length=100, help_text='Apartment/suite if applicable')
     city = models.CharField(max_length=300)
     state = models.CharField(max_length=2)
     zip_code = models.CharField(max_length=10)
+
+    class Meta:
+        abstract = True
 
     def __str__(self):
         return f"{self.address_1}{' ' + self.address_2 if self.address_2 else ''} {self.city}, {self.state} {self.zip_code}"
@@ -109,7 +110,7 @@ class FamilyMember(models.Model):
     class FamilyMemberTypes(models.TextChoices):
         CHILD = "C", _("Child")
         ADULT = "A", _("Adult")
-        TAG_ALONG = "T", _("TagAlong")
+        TAG_ALONG = "T", _("Tag Along")
 
     member_type = models.CharField(
         max_length=1,
@@ -120,10 +121,7 @@ class FamilyMember(models.Model):
     family = models.ForeignKey(Family, on_delete=models.CASCADE)
 
     def __str__(self):
-        last_name = ""
-        if self.last_name is not None:
-            last_name = f"{self.last_name[0]}."
-        return f"{self.first_name} {last_name} FamilyMember"
+        return f'{self.first_name} {self.last_name} ({self.get_member_type_display()})'
 
     @property
     def display_name(self):
