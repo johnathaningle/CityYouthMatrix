@@ -60,7 +60,8 @@ class Trip(models.Model):
         'accounts.FamilyAddress',
         chained_field='family',
         chained_model_field='family',
-        related_name='+'
+        related_name='+',
+        on_delete=models.DO_NOTHING,
     )
     pickup_location = models.CharField(max_length=100, blank=True, help_text='Specific pickup location at the address (front, side, etc)')
     pickup_datetime = models.DateTimeField(null=True, db_index=True, help_text='Date and time to pickup')
@@ -79,7 +80,8 @@ class Trip(models.Model):
         'accounts.FamilyAddress',
         chained_field='family',
         chained_model_field='family',
-        related_name='+'
+        related_name='+',
+        on_delete=models.DO_NOTHING,
     )
     return_datetime = models.DateTimeField(null=True, db_index=True, help_text='Date and time to return')
     return_completed = models.BooleanField(default=False, help_text='Was the family picked up and dropped off at the return address')
