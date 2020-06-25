@@ -1,10 +1,8 @@
 # CityYouthMatrix
 Tech Frederick Hackathon Submission
 
-This is a Python project making use of the Django framework.
-
 ## Development
-To get started locally, do the following:
+This is a Python project making use of the Django framework. To get started locally, do the following:
 
 ```
 virtualenv cym
@@ -12,7 +10,7 @@ source cym/bin/activate
 pip install -r requirements.txt
 ```
 
-To setup the database run `python manage.py migrate`. This will initialize a local SQLite databases with the appropriate tables.
+To setup the database run `python manage.py migrate`. This will initialize a local SQLite database with the appropriate tables.
 
 Next, open a shell into the app with `python manage.py shell` and execute the following lines (substituting the desired values) to create a superuser:
 
