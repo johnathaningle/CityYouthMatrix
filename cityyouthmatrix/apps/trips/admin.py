@@ -20,7 +20,7 @@ class EventAdmin(admin.ModelAdmin):
 
 
 class TripAdmin(admin.ModelAdmin):
-    list_display = ('event', 'family', 'pickup_driver', 'return_driver', 'is_available')
+    list_display = ('event', 'family', 'pickup_driver', 'pickup_datetime', 'return_driver', 'return_datetime')
     list_select_related = True
     list_filter = ('event', 'family', 'pickup_driver', 'return_driver', 'pickup_completed', 'return_completed', 'is_cancelled')
     readonly_fields = ('pickup_completed_datetime', 'return_completed_datetime', 'cancelled_datetime')
@@ -35,15 +35,15 @@ class TripAdmin(admin.ModelAdmin):
         (('Pickup'), {
             'fields': (
                 'pickup_driver', 'pickup_address', 'pickup_location', 'pickup_datetime',
-                'pickup_completed', 'pickup_completed_datetime', 'pickup_driver_notes',
-                'pickup_family_notes'
+                'pickup_completed', 'pickup_completed_datetime',
+                'pickup_driver_notes', 'pickup_family_notes'
             ),
         }),
         (('Return'), {
             'fields': (
                 'return_driver', 'return_address', 'return_datetime',
-                'return_completed', 'return_completed_datetime', 'return_driver_notes',
-                'return_family_notes'
+                'return_completed', 'return_completed_datetime',
+                'return_driver_notes', 'return_family_notes'
             )
         }),
     )

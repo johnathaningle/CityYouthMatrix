@@ -22,10 +22,6 @@ class ActivityPartner(models.Model):
 class EventAddress(Address):
     pass
 
-    def __str__(self):
-        return self.name
-
-
 
 class Event(models.Model):
     """Every event takes place at an activity partner's location
@@ -149,3 +145,15 @@ class Trip(models.Model):
             (self.pickup_driver is None or self.return_driver is None) and
             not self.return_completed
         )
+
+    @property
+    def pickup_duration(self):
+        if self.pickup_datetime is None or self.pickup_completed_datetime is None:
+            return None
+        return (self.pickup_completed_datetime - self.pickup_datetime).minutes
+
+    @property
+    def return_duration(self):
+        if self.return_datetime is None or self.return_completed_datetime is None:
+            return None
+        return (self.return_completed_datetime - self.return_datetime).minutes

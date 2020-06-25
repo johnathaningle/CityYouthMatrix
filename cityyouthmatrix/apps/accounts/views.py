@@ -6,6 +6,8 @@ from django.http import HttpRequest
 
 
 def login_success(request):
+    if request.user.is_anonymous:
+        return redirect('/')
     if request.user.is_superuser:
         return redirect('/admin')
     try:
