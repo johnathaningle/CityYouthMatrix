@@ -84,4 +84,4 @@ urlpatterns = [
 
 admin.site.site_header = 'City Youth Matrix'
 admin.site.index_title = 'Site administration'
-admin.site.site_title = 'Django site admin'
+admin.site.site_title = 'City Youth Matrix admin'
