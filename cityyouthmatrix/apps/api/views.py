@@ -1,7 +1,12 @@
 from typing import List
+
 from django.shortcuts import render
 from django.http import JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+
+from cityyouthmatrix.common.view_models import SerializedTrip
+from ..trips.models import Trip
 
 from ..accounts.models import (
     Driver, Family, User
@@ -48,3 +53,19 @@ def add_driver(request: HttpRequest) -> JsonResponse:
 def get_family_trips(request: HttpRequest):
     families = list(Family.objects.values())
     return JsonResponse(families, safe=False)
+
+# @login_required
+def get_driver_context(request:HttpRequest):
+    managed_trips = list(Trip.objects.filter(pickup_driver__user__email=request.user.email).all())
+    unassigned_trips = list(
+        Trip.objects.filter(return_completed=False) |
+        Trip.objects.filter(pickup_completed=False))
+
+    managed_trips_context = [SerializedTrip(t).to_json() for t in managed_trips]
+    unassigned_trips_context = [SerializedTrip(t).to_json() for t in unassigned_trips]
+
+    context = {
+        "managed_trips": managed_trips_context,
+        "unassigned_trips": unassigned_trips_context
+    }
+    return JsonResponse(context, safe=False)

@@ -52,5 +52,24 @@ declare interface IController {
     handleLogic(): void
 }
 
+declare namespace DTO {
+    export interface SerializedTrip {
+        date: string
+        time: string
+        family: string
+        num_adults: number
+        num_kids: number
+        pickup_address: string
+        dropoff_addresss: string
+        contact_number: string
+        is_returned: boolean
+    }
+
+    export interface DriverContext {
+        managed_trips: Array<SerializedTrip>
+        unassigned_trips: Array<SerializedTrip>
+    }
+}
+
 
 

@@ -13,7 +13,7 @@ from .models import (
 
 
 class UserAdmin(UserAdmin):
-    list_display = ('email', 'first_name', 'last_name', 'contact_number')
+    list_display = ('email', 'first_name', 'last_name', 'contact_number', 'is_superuser')
     fieldsets = (
         (('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'contact_number')}),
         (None, {'fields': ('password',)}),

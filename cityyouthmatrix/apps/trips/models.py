@@ -22,6 +22,10 @@ class ActivityPartner(models.Model):
 class EventAddress(Address):
     pass
 
+    def __str__(self):
+        return self.name
+
+
 
 class Event(models.Model):
     """Every event takes place at an activity partner's location
