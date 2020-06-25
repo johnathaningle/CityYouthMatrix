@@ -81,3 +81,7 @@ urlpatterns = [
     path("driver/tripinfo", driver_trip_info),
     path("driver/driver-site-rules", driver_site_rules)
 ]
+
+admin.site.site_header = 'City Youth Matrix'
+admin.site.index_title = 'Site administration'
+admin.site.site_title = 'Django site admin'
